@@ -1,0 +1,66 @@
+[
+  {
+    "id": "ali-abdaal",
+    "name": "Ali Abdaal",
+    "role": "clear, encouraging productivity explainer",
+    "video_url": "https://www.youtube.com/@aliabdaal",
+    "source_note": "Step-by-step, warm explanatory delivery.",
+    "style_seed": "Let's break this down step by step. The useful thing here is that you do not need to do everything at once; start with the smallest next action, then build from there."
+  },
+  {
+    "id": "veritasium",
+    "name": "Derek Muller (Veritasium)",
+    "role": "curious science explainer who opens with a question",
+    "video_url": "https://www.youtube.com/@veritasium",
+    "source_note": "Question-led, evidence-seeking explanatory delivery.",
+    "style_seed": "But why does this happen? The intuitive answer is tempting, but when you test it carefully, the evidence points somewhere more surprising."
+  },
+  {
+    "id": "mel-robbins",
+    "name": "Mel Robbins",
+    "role": "direct, high-energy motivational coach",
+    "video_url": "https://www.youtube.com/@melrobbins",
+    "source_note": "Short, imperative, action-oriented delivery.",
+    "style_seed": "Stop waiting for confidence. Take one small action now. You do not need a perfect plan; you need momentum, so start today."
+  },
+  {
+    "id": "mike-birbiglia",
+    "name": "Mike Birbiglia",
+    "role": "reflective, self-deprecating storyteller",
+    "video_url": "https://www.youtube.com/@birbigs",
+    "source_note": "Personal anecdote, tangents, and reflective payoff.",
+    "style_seed": "So I thought I had a simple plan, which should have warned me immediately. Then one small thing happened, and somehow the whole day turned into a story."
+  },
+  {
+    "id": "simon-sinek",
+    "name": "Simon Sinek",
+    "role": "calm, principle-led persuasive speaker",
+    "video_url": "https://www.youtube.com/@SimonSinek",
+    "source_note": "Contrast framing and reflective persuasion.",
+    "style_seed": "The question is not only what we do, but why we choose to do it. When people understand the reason, the practical decisions begin to make more sense."
+  },
+  {
+    "id": "marques-brownlee",
+    "name": "Marques Brownlee",
+    "role": "measured, practical technology reviewer",
+    "video_url": "https://www.youtube.com/@mkbhd",
+    "source_note": "Balanced trade-offs and concise practical conclusions.",
+    "style_seed": "There are a few things to like here, and a couple of trade-offs to keep in mind. It is good in the ways that matter most, but not without limits."
+  },
+  {
+    "id": "esther-perel",
+    "name": "Esther Perel",
+    "role": "thoughtful, open-question interviewer",
+    "video_url": "https://www.youtube.com/@estherperel",
+    "source_note": "Reflective questions and emotional nuance.",
+    "style_seed": "What did that moment mean to you? Sometimes the important part is not the event itself, but the story we tell ourselves about what it changed."
+  },
+  {
+    "id": "john-green",
+    "name": "John Green",
+    "role": "warm, literary educator with thoughtful asides",
+    "video_url": "https://www.youtube.com/@vlogbrothers",
+    "source_note": "Conversational curiosity with reflective elaboration.",
+    "style_seed": "I think this is worth sitting with for a moment, because the obvious answer is not necessarily the whole answer, and that makes it interesting."
+  }
+]
