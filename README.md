@@ -12,7 +12,7 @@
 ![Tests](https://img.shields.io/badge/tests-passing-16a34a?style=flat-square)
 ![License](https://img.shields.io/badge/license-MIT-6b7280?style=flat-square)
 
-[**See it running**](#️-see-it-running-for-judges) · [Why it's novel](#-whats-novel) · [How it works](#️-how-it-works) · [Built with Codex + GPT-5.6](#️-built-with-codex--gpt-56) · [Proof](#-proof)
+[**See it running**](#️-see-it-running-for-judges) · [Why it's novel](#-whats-novel) · [Why GPT-5.6](#-why-this-required-gpt-56) · [How it works](#️-how-it-works) · [How Codex helped](#️-how-codex-helped-us-build-it) · [Proof](#-proof)
 
 </div>
 
@@ -46,6 +46,20 @@ Three deliberate reversals of how a language app normally works:
 1. **Native-language in → English-creator out.** You speak your _own_ language; we never grade your English. We read the idiolect underneath the words and point it at English role models. Most tools do the opposite.
 2. **Resemblance is a word, not a percentage.** Style similarity isn't precise to two decimals, so we don't fake it. Matches read _strong / clear / partial_ — honest about what an embedding can and can't claim.
 3. **Every claim is a grounded, verified chain.** The app never says "you're both confident." It shows _You said_ `"<your real sentence>"` → _Creator does_ `<our authored descriptor>` → _Match_ — built only from **your own quotes**, then independently checked by a **Confidence Judge** before it ships. Nothing is invented.
+
+## 🤖 Why this required GPT-5.6
+
+Embeddings are good at finding a shortlist of creators with similar communication patterns. They cannot show a learner **why** that shortlist makes sense in language they can inspect.
+
+GPT-5.6 does the judgment around that match: it reads how the learner organizes ideas, anchors each observation to a real sentence, turns only those observations and our authored creator descriptors into an evidence chain, then runs a separate verification pass that removes weak or generic reasons. The vector matcher still chooses the candidates; GPT-5.6 makes the explanation grounded and checkable.
+
+It is deliberately not one giant “who matches?” prompt. The system asks three smaller questions in sequence:
+
+1. How does this learner communicate, based on their own sentences?
+2. Which supplied facts support each proposed reason?
+3. Is each reason specific and verifiable enough to show?
+
+That separation is what lets a user inspect the recommendation instead of taking a flattering AI claim on faith.
 
 ---
 
@@ -142,25 +156,25 @@ Five single-responsibility roles, kept apart on purpose — so each one is audit
 
 ---
 
-## 🛠️ Built with Codex + GPT-5.6
+## 🛠️ How Codex helped us build it
 
-**The entire backend** — the FastAPI service, the reasoning pipeline, the corpus tooling, and the tests — was built in **Codex** (session referenced by the `/feedback` ID above). Codex scaffolded the pipeline and the three separated GPT-5.6 calls fast, so the effort went into the _reasoning design_ instead of boilerplate; it also built the corpus tooling, the honest two-tier data refactor with its label-enforcing validation, and implemented the vector-centering fix and gated tiebreaker from a written spec (reporting the acceptance numbers back).
+We used Codex as a collaborative engineer, not simply as a code generator. The FastAPI service, reasoning pipeline, corpus tooling, and tests were built in Codex (session referenced by the `/feedback` ID above), which let the work stay focused on the decisions that changed the product rather than on boilerplate.
 
-**Decisions made during the build:**
+The important iterations were architectural and empirical:
 
 - Ship **plain Whisper translation**, not a style-preserving translator — the "nicer" translator erased the idiolect the model needs to read.
-- Keep the **three GPT-5.6 calls separate** so each is independently auditable.
+- Keep the **three GPT-5.6 calls separate** so each is independently auditable and failures can degrade safely.
 - **Center the embedding space** rather than fake the scores when matches collapsed to near-identical cosines.
 - Run the LLM **tiebreaker only on genuine ties**, behind a deterministic gate, with a vector fallback.
 - **Label AI-drafted vs. human-verified data honestly** instead of claiming a review that never happened.
 
-Full reasoning: [`docs/reference/design-decisions.md`](docs/reference/design-decisions.md).
+GPT-5.6 is the product’s live reasoning layer; Codex was the development partner that helped us build and iterate on that layer. Full reasoning: [`docs/reference/design-decisions.md`](docs/reference/design-decisions.md).
 
 ---
 
 ## 📊 Proof
 
-Not claims — checkable numbers from the code and the seeded demo run:
+These are implementation and diagnostic checks, not a claim of completed human-outcome evaluation:
 
 - **140-creator corpus**, enforced in code (`EXPECTED_CREATOR_COUNT = 140`): **10 human-verified** + **130 AI-drafted candidates**, with validation that rejects mislabeled rows.
 - **Centering works:** nearest-neighbor cosine dropped from **0.997 → 0.95**, so near-identical styles actually separate (documented in `design-decisions.md`).
