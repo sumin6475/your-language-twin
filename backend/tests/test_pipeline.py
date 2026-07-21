@@ -1,81 +1,114 @@
 from __future__ import annotations
 
+import asyncio
 import json
-import importlib
-from pathlib import Path
 
 import numpy as np
-from fastapi.testclient import TestClient
 
-from backend.models import Creator
+from backend.demo_cache import DemoResultCache
+from backend.models import Creator, CreatorMatch, PipelineResponse, Sentence, TranscriptResult
 from backend.pipeline import MatchPipeline
 
 
-def test_pipeline_returns_three_matches_without_persisting_audio(monkeypatch, tmp_path: Path) -> None:
+def test_pipeline_runs_fixed_graph_and_keeps_only_grounded_evidence(monkeypatch) -> None:
     creators = [
-        Creator("a", "A", "analytical", "https://example.com/a", "qualified"),
-        Creator("b", "B", "direct", "https://example.com/b", "imperative"),
-        Creator("c", "C", "reflective", "https://example.com/c", "questions"),
+        Creator("a", "Creator A", "analytical", "https://example.com/a", "Careful qualifiers; question-led framing", (1,)),
+        Creator("b", "Creator B", "direct", "https://example.com/b", "Short declarative sentences; direct conclusions", (2,)),
+        Creator("c", "Creator C", "reflective", "https://example.com/c", "Reflective asides; open questions", (3,)),
     ]
-    corpus_file = tmp_path / "corpus.npz"
-    np.savez(corpus_file, ids=np.array(["a", "b", "c"]), vectors=np.eye(3, dtype=np.float32))
-    creators_file = tmp_path / "creators.json"
-    creators_file.write_text("[]", encoding="utf-8")
-
     monkeypatch.setattr("backend.pipeline.load_creators", lambda: creators)
-    monkeypatch.setattr(
-        "backend.pipeline.load_vectors", lambda: (["a", "b", "c"], np.eye(3, dtype=np.float32))
-    )
+    monkeypatch.setattr("backend.pipeline.load_vectors", lambda: (["a", "b", "c"], np.eye(3, dtype=np.float32), np.zeros(3, dtype=np.float32)))
+    calls: list[str] = []
+    text = " ".join(["I think we should look at this carefully before deciding."] * 30)
+
+    def llm(system: str, user: str, _: int) -> str:
+        calls.append(system.split()[0])
+        if "Read only" in system:
+            return json.dumps({"thinking_traits": [{"trait_id": "careful", "label": "Careful", "evidence_sentence_id": "s1", "confidence": .9}] * 3, "learning_traits": [], "learner_quotes": [{"sentence_id": "s1", "text": "I think we should look at this carefully before deciding."}], "style_summary": "Careful."})
+        if "Return JSON {why_panels" in system:
+            payload = json.loads(user)
+            return json.dumps({"why_panels": [{"creator_id": m["creator_id"], "resemblance": "partial", "learner_trait_chips": ["Careful"], "evidence": [{"trait_id": "careful", "you_quote": {"sentence_id": "s1", "text": "I think we should look at this carefully before deciding."}, "creator_descriptor": m["descriptors"][0], "match_reason": "You both consider the evidence before reaching a conclusion."}, {"trait_id": "careful", "you_quote": {"sentence_id": "s1", "text": "I think we should look at this carefully before deciding."}, "creator_descriptor": m["descriptors"][0], "match_reason": "You both leave room to think before deciding."}]} for m in payload["matches"]]})
+        payload = json.loads(user)
+        return json.dumps({"verified_panels": [{"creator_id": panel["creator_id"], "resemblance": "clear", "evidence": [{"trait_id": item["trait_id"], "verdict": "kept", "verifiable": True, "grounded": True} for item in panel["evidence"]]} for panel in payload["why_panels"]], "overall_confidence": .8, "judge_skipped": False})
+
+    pipeline = MatchPipeline(translate=lambda *_: text, llm=llm, embed=lambda _: np.array([1, 0, 0], dtype=np.float32))
+    response = asyncio.run(pipeline.run_pipeline(b"private audio", "sample.m4a"))
+
+    assert len(response.matches) == 3
+    assert response.audio_deleted is True
+    assert [item.step for item in response.step_trace if item.status == "started"] == ["transcript", "style_reader", "matcher", "memory", "evidence_writer", "confidence_judge"]
+    assert len(calls) == 3
+    assert response.matches[0].evidence
+    assert response.tiebreak_skipped is True
+
+
+def test_short_transcript_stops_before_gpt(monkeypatch) -> None:
+    monkeypatch.setattr("backend.pipeline.load_creators", lambda: [])
+    monkeypatch.setattr("backend.pipeline.load_vectors", lambda: ([], np.empty((0, 3)), np.zeros(3, dtype=np.float32)))
+    pipeline = MatchPipeline(translate=lambda *_: "too short", llm=lambda *_: (_ for _ in ()).throw(AssertionError()), embed=lambda _: np.ones(3))
+    response = asyncio.run(pipeline.run_pipeline(b"private audio", "sample.m4a"))
+    assert response.matches == []
+    assert response.message == "Please talk a little longer, about a minute or two."
+
+
+def test_demo_cache_returns_only_an_allowlisted_audio_result() -> None:
+    pipeline_response = {"matches": [], "step_trace": [], "audio_deleted": True}
+    known = b"project-owned demo recording"
+    cache = DemoResultCache({DemoResultCache.digest(known): PipelineResponse.model_validate(pipeline_response)})
+    assert cache.get(known) is not None
+    assert cache.get(b"a learner recording") is None
+
+
+def test_generic_and_timeout_fallbacks_never_return_more_than_three_cards(monkeypatch) -> None:
+    matches = [
+        CreatorMatch(
+            creator_id=str(index), creator_name=f"Creator {index}", role="role",
+            channel_url=f"https://example.com/{index}", cosine_score=1 - index / 10,
+            descriptors=["clear structure"], rank=index + 1,
+        )
+        for index in range(6)
+    ]
+    pipeline = object.__new__(MatchPipeline)
+    assert len(pipeline._generic_response(matches, [], False).matches) == 3
+
+    async def times_out(*_args):
+        raise asyncio.TimeoutError
+
+    monkeypatch.setattr(pipeline, "_run", times_out)
+    monkeypatch.setattr(pipeline, "_matcher", lambda _text: matches)
+    response = asyncio.run(pipeline.run_pipeline(b"audio", "sample.m4a"))
+    assert len(response.matches) == 3
+    assert response.message == "We are showing the clearest overlap we found."
+
+
+def test_embedding_model_is_loaded_once_and_reused(monkeypatch) -> None:
+    monkeypatch.setattr("backend.pipeline.load_creators", lambda: [])
+    monkeypatch.setattr("backend.pipeline.load_vectors", lambda: ([], np.empty((0, 3)), np.zeros(3, dtype=np.float32)))
+    loads = []
+
+    class FakeModel:
+        def encode(self, texts, normalize_embeddings):
+            assert normalize_embeddings is True
+            return np.array([[1, 2]], dtype=np.float32)
+
+    monkeypatch.setattr(MatchPipeline, "_load_embedding_model", staticmethod(lambda: loads.append(True) or FakeModel()))
+    pipeline = MatchPipeline(translate=lambda *_: "", llm=lambda *_: "")
+    assert len(loads) == 1
+    np.testing.assert_array_equal(pipeline._embed("first"), np.array([1, 2], dtype=np.float32))
+    np.testing.assert_array_equal(pipeline._embed("second"), np.array([1, 2], dtype=np.float32))
+    assert len(loads) == 1
+
+
+def test_tiebreaker_reorders_only_the_six_centered_candidates(monkeypatch) -> None:
+    creators = [Creator(str(index), f"Creator {index}", "role", f"https://example.com/{index}", "note", (index,), f"Creator {index} uses a measured pace. They move from questions to a clear conclusion.") for index in range(6)]
+    monkeypatch.setattr("backend.pipeline.load_creators", lambda: creators)
+    monkeypatch.setattr("backend.pipeline.load_vectors", lambda: ([str(index) for index in range(6)], np.eye(6, dtype=np.float32), np.zeros(6, dtype=np.float32)))
     calls = []
-
-    def fake_transcribe(audio: bytes, filename: str, content_type: str | None) -> str:
-        calls.append((audio, filename, content_type))
-        return "한국어 원문"
-
-    def fake_llm(system: str, user: str) -> str:
-        if "sociolinguist" in system:
-            return json.dumps({"mood": "analytical", "hedging": "moderate"})
-        if "translate" in system:
-            return json.dumps({"translation": "I think we should look at the evidence carefully."})
-        return "You both use careful, qualified reasoning before reaching a conclusion."
-
-    pipeline = MatchPipeline(
-        transcribe=fake_transcribe,
-        llm=fake_llm,
-        embed=lambda _: np.array([1, 0, 0], dtype=np.float32),
-    )
-
-    matches = pipeline.match(b"private audio", "sample.m4a", "audio/mp4")
-
-    assert calls == [(b"private audio", "sample.m4a", "audio/mp4")]
-    assert [match.creator.name for match in matches] == ["A", "B", "C"]
-    assert all(match.why for match in matches)
-
-
-def test_match_endpoint_returns_creator_cards(monkeypatch) -> None:
-    app_module = importlib.import_module("backend.app")
-
-    class FakePipeline:
-        def match(self, audio: bytes, filename: str, content_type: str | None):
-            assert audio == b"native audio"
-            assert filename == "sample.m4a"
-            assert content_type == "audio/mp4"
-            return [
-                type(
-                    "Result",
-                    (),
-                    {
-                        "creator": Creator("a", "Creator A", "explainer", "https://example.com", "clear"),
-                        "similarity": 0.91,
-                        "why": "You both explain ideas in careful steps.",
-                    },
-                )()
-            ]
-
-    monkeypatch.setattr(app_module, "pipeline", FakePipeline())
-    response = TestClient(app_module.app).post(
-        "/match", files={"audio": ("sample.m4a", b"native audio", "audio/mp4")}
-    )
-
-    assert response.status_code == 200
-    assert response.json()["matches"][0]["name"] == "Creator A"
+    def tiebreak(system, user, max_tokens):
+        calls.append((system, user, max_tokens))
+        return json.dumps({"ranked_ids": ["2", "1", "0"], "reasons": ["one", "two", "three"]})
+    pipeline = MatchPipeline(translate=lambda *_: "", llm=lambda *_: "", embed=lambda _: np.ones(6), tiebreak_llm=tiebreak)
+    candidates = pipeline._matcher("sample")
+    ranked = asyncio.run(pipeline._tiebreak(TranscriptResult(transcript_en="A learner sample with enough words.", sentences=[Sentence(id="s1", text="A learner sample.")], word_count=120), candidates))
+    assert [match.creator_id for match in ranked] == ["2", "1", "0"]
+    assert calls[0][2] == 300

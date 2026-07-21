@@ -1,0 +1,145 @@
+{
+  "dataset_version": "2026-07-20-centered-tiebreaker-v1",
+  "creator_count": 140,
+  "verification_tiers": {
+    "candidate": 130,
+    "human_verified": 10
+  },
+  "known_limitations": [
+    "9-axis rubric only; humor / wit is intentionally NOT measured.",
+    "The 130 candidate scores are AI-drafted from known public style, reviewed by the builder \u2014 not independently human-verified."
+  ],
+  "genre_distribution": {
+    "coach": 23,
+    "essay": 25,
+    "explainer": 24,
+    "interview": 22,
+    "review": 22,
+    "story": 24
+  },
+  "style_axis_distribution": {
+    "directness": {
+      "2": 30,
+      "3": 69,
+      "4": 26,
+      "5": 15
+    },
+    "rhythm": {
+      "2": 29,
+      "3": 47,
+      "4": 53,
+      "5": 11
+    },
+    "questions": {
+      "2": 39,
+      "3": 79,
+      "4": 16,
+      "5": 6
+    },
+    "hedging": {
+      "1": 22,
+      "2": 62,
+      "3": 40,
+      "4": 16
+    },
+    "structure": {
+      "1": 9,
+      "2": 8,
+      "3": 47,
+      "4": 48,
+      "5": 28
+    },
+    "storytelling": {
+      "2": 26,
+      "3": 51,
+      "4": 53,
+      "5": 10
+    },
+    "warmth": {
+      "2": 19,
+      "3": 75,
+      "4": 40,
+      "5": 6
+    },
+    "persuasion": {
+      "1": 10,
+      "2": 66,
+      "3": 32,
+      "4": 19,
+      "5": 13
+    },
+    "spontaneity": {
+      "1": 8,
+      "2": 48,
+      "3": 45,
+      "4": 27,
+      "5": 12
+    }
+  },
+  "probe_dispersion": {
+    "mean": 0.051179,
+    "max": 0.122747
+  },
+  "nearest_pairs": [
+    {
+      "left_id": "cleo-abram",
+      "right_id": "lessons-from-the-screenplay",
+      "cosine_similarity": 1.000001
+    },
+    {
+      "left_id": "lessons-from-the-screenplay",
+      "right_id": "how-to-cook-that",
+      "cosine_similarity": 1.000001
+    },
+    {
+      "left_id": "wendover-productions",
+      "right_id": "how-to-cook-that",
+      "cosine_similarity": 1.000001
+    },
+    {
+      "left_id": "cleo-abram",
+      "right_id": "how-to-cook-that",
+      "cosine_similarity": 1.000001
+    },
+    {
+      "left_id": "cleo-abram",
+      "right_id": "wendover-productions",
+      "cosine_similarity": 1.000001
+    },
+    {
+      "left_id": "dianna-cowern",
+      "right_id": "how-to-cook-that",
+      "cosine_similarity": 1.000001
+    },
+    {
+      "left_id": "cleo-abram",
+      "right_id": "dianna-cowern",
+      "cosine_similarity": 1.000001
+    },
+    {
+      "left_id": "dr-k",
+      "right_id": "lavendaire",
+      "cosine_similarity": 1.0
+    },
+    {
+      "left_id": "matt-davella",
+      "right_id": "dr-k",
+      "cosine_similarity": 1.0
+    },
+    {
+      "left_id": "matt-davella",
+      "right_id": "rowena-tsai",
+      "cosine_similarity": 1.0
+    }
+  ],
+  "matching_space": "corpus-centroid-centered cosine",
+  "centered_cosine_distribution": {
+    "nearest_neighbor_median": 0.949682,
+    "nearest_neighbor_p90": 1.0,
+    "all_pairs_median": -0.040751,
+    "pairs_above_0_999": 87
+  },
+  "exact_duplicate_vectors": 40,
+  "requires_blinded_human_evaluation": true,
+  "review_gate": "candidate rows are AI-drafted and builder-reviewed; verified rows are directly observed by the builder"
+}

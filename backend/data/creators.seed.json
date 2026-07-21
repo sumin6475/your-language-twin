@@ -1,0 +1,4092 @@
+{
+  "dataset_version": "2026-07-20-centered-tiebreaker-v1",
+  "policy": "Human-authored style profiles and neutral generated probes only. No transcripts, captions, audio, or creator quotations are stored.",
+  "creators": [
+    {
+      "id": "alex-hormozi",
+      "name": "Alex Hormozi",
+      "role": "blunt, high-density business operator",
+      "video_url": "https://www.youtube.com/@AlexHormozi",
+      "genre": "explainer",
+      "source_note": "Clear sequencing; evidence-aware context; accessible explanation.",
+      "style_profile": {
+        "directness": 5,
+        "rhythm": 4,
+        "questions": 3,
+        "hedging": 1,
+        "structure": 5,
+        "storytelling": 2,
+        "warmth": 2,
+        "persuasion": 5,
+        "spontaneity": 2
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "The creator speaks with sharp clarity, organizing ideas in a logical, easy-to-follow sequence that emphasizes concrete evidence. Their tone is confident and persuasive, maintaining a brisk pace with minimal tangents or hedging, and using occasional rhetorical questions to engage without diluting focus. Warmth is present but restrained, ensuring explanations remain accessible and purpose-driven rather than overly anecdotal."
+    },
+    {
+      "id": "mel-robbins",
+      "name": "Mel Robbins",
+      "role": "direct, high-energy motivational coach",
+      "video_url": "https://www.youtube.com/@melrobbins",
+      "genre": "coach",
+      "source_note": "Practical next steps; direct encouragement; action-focused framing.",
+      "style_profile": {
+        "directness": 5,
+        "rhythm": 4,
+        "questions": 3,
+        "hedging": 1,
+        "structure": 4,
+        "storytelling": 3,
+        "warmth": 4,
+        "persuasion": 5,
+        "spontaneity": 3
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses short, energetic beats and an occasional question to open a point. Moves through ideas with explicit step-by-step progression, then lands on direct conclusions and firm next steps. The overall tone keeps warm, encouraging reassurance and favors an occasional concrete scene over topic-specific detail."
+    },
+    {
+      "id": "gary-vaynerchuk",
+      "name": "Gary Vaynerchuk",
+      "role": "raw, fast, emphatic entrepreneur",
+      "video_url": "https://www.youtube.com/@garyvee",
+      "genre": "interview",
+      "source_note": "Open questions; attentive follow-up; reflective turn-taking.",
+      "style_profile": {
+        "directness": 5,
+        "rhythm": 5,
+        "questions": 3,
+        "hedging": 1,
+        "structure": 2,
+        "storytelling": 3,
+        "warmth": 3,
+        "persuasion": 5,
+        "spontaneity": 5
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses short, energetic beats and an occasional question to open a point. Moves through ideas with a looser reflective build, then lands on direct conclusions and firm next steps. The overall tone keeps practical reassurance and favors an occasional concrete scene over topic-specific detail."
+    },
+    {
+      "id": "simon-sinek",
+      "name": "Simon Sinek",
+      "role": "calm, principle-led persuasive speaker",
+      "video_url": "https://www.youtube.com/@simonsinek",
+      "genre": "review",
+      "source_note": "Trade-off framing; concrete criteria; measured recommendation.",
+      "style_profile": {
+        "directness": 3,
+        "rhythm": 3,
+        "questions": 3,
+        "hedging": 2,
+        "structure": 4,
+        "storytelling": 4,
+        "warmth": 4,
+        "persuasion": 5,
+        "spontaneity": 2
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses a steady conversational pace and an occasional question to open a point. Moves through ideas with explicit step-by-step progression, then lands on clear but balanced conclusions. The overall tone keeps warm, encouraging reassurance and favors story-to-insight turns over topic-specific detail."
+    },
+    {
+      "id": "jay-shetty",
+      "name": "Jay Shetty",
+      "role": "warm, reflective story-to-lesson host",
+      "video_url": "https://www.youtube.com/@JayShetty",
+      "genre": "essay",
+      "source_note": "Reflective connections; layered context; considered conclusion.",
+      "style_profile": {
+        "directness": 3,
+        "rhythm": 3,
+        "questions": 3,
+        "hedging": 2,
+        "structure": 4,
+        "storytelling": 5,
+        "warmth": 5,
+        "persuasion": 4,
+        "spontaneity": 2
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses a steady conversational pace and an occasional question to open a point. Moves through ideas with explicit step-by-step progression, then lands on clear but balanced conclusions. The overall tone keeps warm, encouraging reassurance and favors story-to-insight turns over topic-specific detail."
+    },
+    {
+      "id": "marie-forleo",
+      "name": "Marie Forleo",
+      "role": "warm, energetic encouraging coach",
+      "video_url": "https://www.youtube.com/@marieforleo",
+      "genre": "story",
+      "source_note": "First-person momentum; vivid transitions; conversational pacing.",
+      "style_profile": {
+        "directness": 5,
+        "rhythm": 4,
+        "questions": 3,
+        "hedging": 1,
+        "structure": 4,
+        "storytelling": 3,
+        "warmth": 4,
+        "persuasion": 5,
+        "spontaneity": 3
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses short, energetic beats and an occasional question to open a point. Moves through ideas with explicit step-by-step progression, then lands on direct conclusions and firm next steps. The overall tone keeps warm, encouraging reassurance and favors an occasional concrete scene over topic-specific detail."
+    },
+    {
+      "id": "veritasium",
+      "name": "Derek Muller (Veritasium)",
+      "role": "curious science explainer who opens with a question",
+      "video_url": "https://www.youtube.com/@veritasium",
+      "genre": "explainer",
+      "source_note": "Clear sequencing; evidence-aware context; accessible explanation.",
+      "style_profile": {
+        "directness": 3,
+        "rhythm": 3,
+        "questions": 5,
+        "hedging": 3,
+        "structure": 4,
+        "storytelling": 3,
+        "warmth": 2,
+        "persuasion": 2,
+        "spontaneity": 2
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses a steady conversational pace and frequent questions that guide the listener. Moves through ideas with explicit step-by-step progression, then lands on clear but balanced conclusions. The overall tone keeps calm analytical distance and favors an occasional concrete scene over topic-specific detail."
+    },
+    {
+      "id": "vsauce",
+      "name": "Michael Stevens (Vsauce)",
+      "role": "winding, curiosity-driven explainer building to a reveal",
+      "video_url": "https://www.youtube.com/@Vsauce",
+      "genre": "coach",
+      "source_note": "Practical next steps; direct encouragement; action-focused framing.",
+      "style_profile": {
+        "directness": 2,
+        "rhythm": 3,
+        "questions": 5,
+        "hedging": 3,
+        "structure": 3,
+        "storytelling": 3,
+        "warmth": 2,
+        "persuasion": 2,
+        "spontaneity": 4
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses a steady conversational pace and frequent questions that guide the listener. Moves through ideas with a visible beginning, comparison, and conclusion, then lands on careful and qualified conclusions. The overall tone keeps calm analytical distance and favors an occasional concrete scene over topic-specific detail."
+    },
+    {
+      "id": "kurzgesagt",
+      "name": "Kurzgesagt",
+      "role": "calm, structured, analogy-driven explainer",
+      "video_url": "https://www.youtube.com/@kurzgesagt",
+      "genre": "interview",
+      "source_note": "Open questions; attentive follow-up; reflective turn-taking.",
+      "style_profile": {
+        "directness": 3,
+        "rhythm": 3,
+        "questions": 3,
+        "hedging": 2,
+        "structure": 5,
+        "storytelling": 3,
+        "warmth": 3,
+        "persuasion": 2,
+        "spontaneity": 1
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses a steady conversational pace and an occasional question to open a point. Moves through ideas with explicit step-by-step progression, then lands on clear but balanced conclusions. The overall tone keeps practical reassurance and favors an occasional concrete scene over topic-specific detail."
+    },
+    {
+      "id": "cleo-abram",
+      "name": "Cleo Abram",
+      "role": "optimistic, accessible technology explainer",
+      "video_url": "https://www.youtube.com/@CleoAbram",
+      "genre": "review",
+      "source_note": "Trade-off framing; concrete criteria; measured recommendation.",
+      "style_profile": {
+        "directness": 3,
+        "rhythm": 3,
+        "questions": 3,
+        "hedging": 2,
+        "structure": 5,
+        "storytelling": 3,
+        "warmth": 3,
+        "persuasion": 2,
+        "spontaneity": 2
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses a steady conversational pace and an occasional question to open a point. Moves through ideas with explicit step-by-step progression, then lands on clear but balanced conclusions. The overall tone keeps practical reassurance and favors an occasional concrete scene over topic-specific detail."
+    },
+    {
+      "id": "john-green",
+      "name": "John Green (vlogbrothers)",
+      "role": "warm, literary educator with reflective asides",
+      "video_url": "https://www.youtube.com/@vlogbrothers",
+      "genre": "essay",
+      "source_note": "Reflective connections; layered context; considered conclusion.",
+      "style_profile": {
+        "directness": 3,
+        "rhythm": 4,
+        "questions": 3,
+        "hedging": 3,
+        "structure": 3,
+        "storytelling": 4,
+        "warmth": 4,
+        "persuasion": 2,
+        "spontaneity": 4
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses short, energetic beats and an occasional question to open a point. Moves through ideas with a visible beginning, comparison, and conclusion, then lands on clear but balanced conclusions. The overall tone keeps warm, encouraging reassurance and favors story-to-insight turns over topic-specific detail."
+    },
+    {
+      "id": "ali-abdaal",
+      "name": "Ali Abdaal",
+      "role": "clear, encouraging step-by-step productivity explainer",
+      "video_url": "https://www.youtube.com/@aliabdaal",
+      "genre": "story",
+      "source_note": "First-person momentum; vivid transitions; conversational pacing.",
+      "style_profile": {
+        "directness": 3,
+        "rhythm": 3,
+        "questions": 3,
+        "hedging": 2,
+        "structure": 4,
+        "storytelling": 3,
+        "warmth": 4,
+        "persuasion": 3,
+        "spontaneity": 2
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses a steady conversational pace and an occasional question to open a point. Moves through ideas with explicit step-by-step progression, then lands on clear but balanced conclusions. The overall tone keeps warm, encouraging reassurance and favors an occasional concrete scene over topic-specific detail."
+    },
+    {
+      "id": "thomas-frank",
+      "name": "Thomas Frank",
+      "role": "friendly, practical productivity guide",
+      "video_url": "https://www.youtube.com/@Thomasfrank",
+      "genre": "explainer",
+      "source_note": "Clear sequencing; evidence-aware context; accessible explanation.",
+      "style_profile": {
+        "directness": 3,
+        "rhythm": 3,
+        "questions": 3,
+        "hedging": 2,
+        "structure": 5,
+        "storytelling": 3,
+        "warmth": 4,
+        "persuasion": 2,
+        "spontaneity": 2
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses a steady conversational pace and an occasional question to open a point. Moves through ideas with explicit step-by-step progression, then lands on clear but balanced conclusions. The overall tone keeps warm, encouraging reassurance and favors an occasional concrete scene over topic-specific detail."
+    },
+    {
+      "id": "matt-davella",
+      "name": "Matt D'Avella",
+      "role": "calm, minimalist, measured reflective filmmaker",
+      "video_url": "https://www.youtube.com/@mattdavella",
+      "genre": "coach",
+      "source_note": "Practical next steps; direct encouragement; action-focused framing.",
+      "style_profile": {
+        "directness": 2,
+        "rhythm": 2,
+        "questions": 3,
+        "hedging": 3,
+        "structure": 3,
+        "storytelling": 4,
+        "warmth": 4,
+        "persuasion": 2,
+        "spontaneity": 2
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses a measured, connected pace and an occasional question to open a point. Moves through ideas with a visible beginning, comparison, and conclusion, then lands on careful and qualified conclusions. The overall tone keeps warm, encouraging reassurance and favors story-to-insight turns over topic-specific detail."
+    },
+    {
+      "id": "nathaniel-drew",
+      "name": "Nathaniel Drew",
+      "role": "introspective, calm self-exploration vlogger",
+      "video_url": "https://www.youtube.com/@nathanieldrew",
+      "genre": "interview",
+      "source_note": "Open questions; attentive follow-up; reflective turn-taking.",
+      "style_profile": {
+        "directness": 2,
+        "rhythm": 2,
+        "questions": 3,
+        "hedging": 3,
+        "structure": 3,
+        "storytelling": 4,
+        "warmth": 4,
+        "persuasion": 2,
+        "spontaneity": 2
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses a measured, connected pace and an occasional question to open a point. Moves through ideas with a visible beginning, comparison, and conclusion, then lands on careful and qualified conclusions. The overall tone keeps warm, encouraging reassurance and favors story-to-insight turns over topic-specific detail."
+    },
+    {
+      "id": "mkbhd",
+      "name": "Marques Brownlee (MKBHD)",
+      "role": "measured, balanced technology reviewer",
+      "video_url": "https://www.youtube.com/@mkbhd",
+      "genre": "review",
+      "source_note": "Trade-off framing; concrete criteria; measured recommendation.",
+      "style_profile": {
+        "directness": 3,
+        "rhythm": 3,
+        "questions": 2,
+        "hedging": 3,
+        "structure": 4,
+        "storytelling": 2,
+        "warmth": 3,
+        "persuasion": 2,
+        "spontaneity": 2
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses a steady conversational pace and mostly statement-led framing. Moves through ideas with explicit step-by-step progression, then lands on clear but balanced conclusions. The overall tone keeps practical reassurance and favors pattern-first explanation over topic-specific detail."
+    },
+    {
+      "id": "casey-neistat",
+      "name": "Casey Neistat",
+      "role": "energetic, first-person, story-driven vlogger",
+      "video_url": "https://www.youtube.com/@casey",
+      "genre": "essay",
+      "source_note": "Reflective connections; layered context; considered conclusion.",
+      "style_profile": {
+        "directness": 4,
+        "rhythm": 5,
+        "questions": 2,
+        "hedging": 1,
+        "structure": 3,
+        "storytelling": 5,
+        "warmth": 3,
+        "persuasion": 3,
+        "spontaneity": 4
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses short, energetic beats and mostly statement-led framing. Moves through ideas with a visible beginning, comparison, and conclusion, then lands on direct conclusions and firm next steps. The overall tone keeps practical reassurance and favors story-to-insight turns over topic-specific detail."
+    },
+    {
+      "id": "emma-chamberlain",
+      "name": "Emma Chamberlain",
+      "role": "self-aware, rambly, ironic conversational vlogger",
+      "video_url": "https://www.youtube.com/@emmachamberlain",
+      "genre": "story",
+      "source_note": "First-person momentum; vivid transitions; conversational pacing.",
+      "style_profile": {
+        "directness": 2,
+        "rhythm": 4,
+        "questions": 3,
+        "hedging": 4,
+        "structure": 1,
+        "storytelling": 4,
+        "warmth": 3,
+        "persuasion": 1,
+        "spontaneity": 5
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses short, energetic beats and an occasional question to open a point. Moves through ideas with a looser reflective build, then lands on careful and qualified conclusions. The overall tone keeps practical reassurance and favors story-to-insight turns over topic-specific detail."
+    },
+    {
+      "id": "yes-theory",
+      "name": "Yes Theory",
+      "role": "earnest, emotional, adventurous storyteller",
+      "video_url": "https://www.youtube.com/@YesTheory",
+      "genre": "explainer",
+      "source_note": "Clear sequencing; evidence-aware context; accessible explanation.",
+      "style_profile": {
+        "directness": 4,
+        "rhythm": 5,
+        "questions": 2,
+        "hedging": 1,
+        "structure": 3,
+        "storytelling": 5,
+        "warmth": 4,
+        "persuasion": 3,
+        "spontaneity": 4
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses short, energetic beats and mostly statement-led framing. Moves through ideas with a visible beginning, comparison, and conclusion, then lands on direct conclusions and firm next steps. The overall tone keeps warm, encouraging reassurance and favors story-to-insight turns over topic-specific detail."
+    },
+    {
+      "id": "ryan-trahan",
+      "name": "Ryan Trahan",
+      "role": "playful, upbeat challenge vlogger",
+      "video_url": "https://www.youtube.com/@ryan",
+      "genre": "coach",
+      "source_note": "Practical next steps; direct encouragement; action-focused framing.",
+      "style_profile": {
+        "directness": 4,
+        "rhythm": 5,
+        "questions": 2,
+        "hedging": 1,
+        "structure": 3,
+        "storytelling": 5,
+        "warmth": 3,
+        "persuasion": 3,
+        "spontaneity": 4
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses short, energetic beats and mostly statement-led framing. Moves through ideas with a visible beginning, comparison, and conclusion, then lands on direct conclusions and firm next steps. The overall tone keeps practical reassurance and favors story-to-insight turns over topic-specific detail."
+    },
+    {
+      "id": "michelle-khare",
+      "name": "Michelle Khare",
+      "role": "determined, documentary-style challenge creator",
+      "video_url": "https://www.youtube.com/@MichelleKhare",
+      "genre": "interview",
+      "source_note": "Open questions; attentive follow-up; reflective turn-taking.",
+      "style_profile": {
+        "directness": 4,
+        "rhythm": 5,
+        "questions": 2,
+        "hedging": 1,
+        "structure": 3,
+        "storytelling": 5,
+        "warmth": 3,
+        "persuasion": 3,
+        "spontaneity": 4
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses short, energetic beats and mostly statement-led framing. Moves through ideas with a visible beginning, comparison, and conclusion, then lands on direct conclusions and firm next steps. The overall tone keeps practical reassurance and favors story-to-insight turns over topic-specific detail."
+    },
+    {
+      "id": "esther-perel",
+      "name": "Esther Perel",
+      "role": "thoughtful, open-question interviewer",
+      "video_url": "https://www.youtube.com/@estherperel",
+      "genre": "review",
+      "source_note": "Trade-off framing; concrete criteria; measured recommendation.",
+      "style_profile": {
+        "directness": 2,
+        "rhythm": 2,
+        "questions": 5,
+        "hedging": 4,
+        "structure": 2,
+        "storytelling": 3,
+        "warmth": 4,
+        "persuasion": 2,
+        "spontaneity": 3
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses a measured, connected pace and frequent questions that guide the listener. Moves through ideas with a looser reflective build, then lands on careful and qualified conclusions. The overall tone keeps warm, encouraging reassurance and favors an occasional concrete scene over topic-specific detail."
+    },
+    {
+      "id": "steven-bartlett",
+      "name": "Steven Bartlett (Diary of a CEO)",
+      "role": "probing, curious long-form interviewer",
+      "video_url": "https://www.youtube.com/@TheDiaryOfACEO",
+      "genre": "essay",
+      "source_note": "Reflective connections; layered context; considered conclusion.",
+      "style_profile": {
+        "directness": 2,
+        "rhythm": 2,
+        "questions": 5,
+        "hedging": 4,
+        "structure": 3,
+        "storytelling": 3,
+        "warmth": 3,
+        "persuasion": 2,
+        "spontaneity": 3
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses a measured, connected pace and frequent questions that guide the listener. Moves through ideas with a visible beginning, comparison, and conclusion, then lands on careful and qualified conclusions. The overall tone keeps practical reassurance and favors an occasional concrete scene over topic-specific detail."
+    },
+    {
+      "id": "andrew-huberman",
+      "name": "Andrew Huberman",
+      "role": "methodical, detailed, measured science educator",
+      "video_url": "https://www.youtube.com/@hubermanlab",
+      "genre": "story",
+      "source_note": "First-person momentum; vivid transitions; conversational pacing.",
+      "style_profile": {
+        "directness": 3,
+        "rhythm": 2,
+        "questions": 2,
+        "hedging": 3,
+        "structure": 5,
+        "storytelling": 2,
+        "warmth": 2,
+        "persuasion": 3,
+        "spontaneity": 1
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses a measured, connected pace and mostly statement-led framing. Moves through ideas with explicit step-by-step progression, then lands on clear but balanced conclusions. The overall tone keeps calm analytical distance and favors pattern-first explanation over topic-specific detail."
+    },
+    {
+      "id": "johnny-harris",
+      "name": "Johnny Harris",
+      "role": "investigative, momentum-building narrative journalist",
+      "video_url": "https://www.youtube.com/@johnnyharris",
+      "genre": "explainer",
+      "source_note": "Clear sequencing; evidence-aware context; accessible explanation.",
+      "style_profile": {
+        "directness": 4,
+        "rhythm": 4,
+        "questions": 4,
+        "hedging": 2,
+        "structure": 4,
+        "storytelling": 4,
+        "warmth": 2,
+        "persuasion": 3,
+        "spontaneity": 3
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses short, energetic beats and frequent questions that guide the listener. Moves through ideas with explicit step-by-step progression, then lands on direct conclusions and firm next steps. The overall tone keeps calm analytical distance and favors story-to-insight turns over topic-specific detail."
+    },
+    {
+      "id": "trevor-noah",
+      "name": "Trevor Noah",
+      "role": "witty, warm, observational storyteller",
+      "video_url": "https://www.youtube.com/@TrevorNoah",
+      "genre": "coach",
+      "source_note": "Practical next steps; direct encouragement; action-focused framing.",
+      "style_profile": {
+        "directness": 4,
+        "rhythm": 4,
+        "questions": 4,
+        "hedging": 2,
+        "structure": 3,
+        "storytelling": 4,
+        "warmth": 3,
+        "persuasion": 4,
+        "spontaneity": 4
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses short, energetic beats and frequent questions that guide the listener. Moves through ideas with a visible beginning, comparison, and conclusion, then lands on direct conclusions and firm next steps. The overall tone keeps practical reassurance and favors story-to-insight turns over topic-specific detail."
+    },
+    {
+      "id": "adam-grant",
+      "name": "Adam Grant",
+      "role": "English interview creator",
+      "video_url": "https://www.youtube.com/@adamgrant",
+      "genre": "interview",
+      "source_note": "Open questions; attentive follow-up; reflective turn-taking.",
+      "style_profile": {
+        "directness": 3,
+        "rhythm": 3,
+        "questions": 3,
+        "hedging": 2,
+        "structure": 5,
+        "storytelling": 3,
+        "warmth": 3,
+        "persuasion": 3,
+        "spontaneity": 2
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses a steady conversational pace and an occasional question to open a point. Moves through ideas with explicit step-by-step progression, then lands on clear but balanced conclusions. The overall tone keeps practical reassurance and favors an occasional concrete scene over topic-specific detail."
+    },
+    {
+      "id": "brene-brown",
+      "name": "Brené Brown",
+      "role": "English review creator",
+      "video_url": "https://www.youtube.com/@brenebrown",
+      "genre": "review",
+      "source_note": "Trade-off framing; concrete criteria; measured recommendation.",
+      "style_profile": {
+        "directness": 3,
+        "rhythm": 3,
+        "questions": 3,
+        "hedging": 2,
+        "structure": 4,
+        "storytelling": 5,
+        "warmth": 5,
+        "persuasion": 4,
+        "spontaneity": 2
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses a steady conversational pace and an occasional question to open a point. Moves through ideas with explicit step-by-step progression, then lands on clear but balanced conclusions. The overall tone keeps warm, encouraging reassurance and favors story-to-insight turns over topic-specific detail."
+    },
+    {
+      "id": "tim-ferriss",
+      "name": "Tim Ferriss",
+      "role": "English essay creator",
+      "video_url": "https://www.youtube.com/@timferriss",
+      "genre": "essay",
+      "source_note": "Reflective connections; layered context; considered conclusion.",
+      "style_profile": {
+        "directness": 2,
+        "rhythm": 2,
+        "questions": 5,
+        "hedging": 4,
+        "structure": 3,
+        "storytelling": 3,
+        "warmth": 3,
+        "persuasion": 2,
+        "spontaneity": 3
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses a measured, connected pace and frequent questions that guide the listener. Moves through ideas with a visible beginning, comparison, and conclusion, then lands on careful and qualified conclusions. The overall tone keeps practical reassurance and favors an occasional concrete scene over topic-specific detail."
+    },
+    {
+      "id": "cal-newport",
+      "name": "Cal Newport",
+      "role": "English story creator",
+      "video_url": "https://www.youtube.com/@calnewport",
+      "genre": "story",
+      "source_note": "First-person momentum; vivid transitions; conversational pacing.",
+      "style_profile": {
+        "directness": 3,
+        "rhythm": 2,
+        "questions": 2,
+        "hedging": 3,
+        "structure": 5,
+        "storytelling": 2,
+        "warmth": 2,
+        "persuasion": 3,
+        "spontaneity": 1
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses a measured, connected pace and mostly statement-led framing. Moves through ideas with explicit step-by-step progression, then lands on clear but balanced conclusions. The overall tone keeps calm analytical distance and favors pattern-first explanation over topic-specific detail."
+    },
+    {
+      "id": "mark-rober",
+      "name": "Mark Rober",
+      "role": "English explainer creator",
+      "video_url": "https://www.youtube.com/@markrober",
+      "genre": "explainer",
+      "source_note": "Clear sequencing; evidence-aware context; accessible explanation.",
+      "style_profile": {
+        "directness": 4,
+        "rhythm": 4,
+        "questions": 3,
+        "hedging": 2,
+        "structure": 4,
+        "storytelling": 4,
+        "warmth": 3,
+        "persuasion": 2,
+        "spontaneity": 3
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses short, energetic beats and an occasional question to open a point. Moves through ideas with explicit step-by-step progression, then lands on direct conclusions and firm next steps. The overall tone keeps practical reassurance and favors story-to-insight turns over topic-specific detail."
+    },
+    {
+      "id": "hank-green",
+      "name": "Hank Green",
+      "role": "English coach creator",
+      "video_url": "https://www.youtube.com/@hankgreen",
+      "genre": "coach",
+      "source_note": "Practical next steps; direct encouragement; action-focused framing.",
+      "style_profile": {
+        "directness": 4,
+        "rhythm": 4,
+        "questions": 4,
+        "hedging": 2,
+        "structure": 3,
+        "storytelling": 4,
+        "warmth": 4,
+        "persuasion": 3,
+        "spontaneity": 4
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses short, energetic beats and frequent questions that guide the listener. Moves through ideas with a visible beginning, comparison, and conclusion, then lands on direct conclusions and firm next steps. The overall tone keeps warm, encouraging reassurance and favors story-to-insight turns over topic-specific detail."
+    },
+    {
+      "id": "destin-sandlin",
+      "name": "Destin Sandlin",
+      "role": "English interview creator",
+      "video_url": "https://www.youtube.com/@destinsandlin",
+      "genre": "interview",
+      "source_note": "Open questions; attentive follow-up; reflective turn-taking.",
+      "style_profile": {
+        "directness": 3,
+        "rhythm": 2,
+        "questions": 4,
+        "hedging": 3,
+        "structure": 5,
+        "storytelling": 2,
+        "warmth": 3,
+        "persuasion": 3,
+        "spontaneity": 2
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses a measured, connected pace and frequent questions that guide the listener. Moves through ideas with explicit step-by-step progression, then lands on clear but balanced conclusions. The overall tone keeps practical reassurance and favors pattern-first explanation over topic-specific detail."
+    },
+    {
+      "id": "dianna-cowern",
+      "name": "Dianna Cowern",
+      "role": "English review creator",
+      "video_url": "https://www.youtube.com/@diannacowern",
+      "genre": "review",
+      "source_note": "Trade-off framing; concrete criteria; measured recommendation.",
+      "style_profile": {
+        "directness": 3,
+        "rhythm": 3,
+        "questions": 3,
+        "hedging": 2,
+        "structure": 5,
+        "storytelling": 3,
+        "warmth": 3,
+        "persuasion": 2,
+        "spontaneity": 2
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses a steady conversational pace and an occasional question to open a point. Moves through ideas with explicit step-by-step progression, then lands on clear but balanced conclusions. The overall tone keeps practical reassurance and favors an occasional concrete scene over topic-specific detail."
+    },
+    {
+      "id": "tom-scott",
+      "name": "Tom Scott",
+      "role": "English essay creator",
+      "video_url": "https://www.youtube.com/@tomscott",
+      "genre": "essay",
+      "source_note": "Reflective connections; layered context; considered conclusion.",
+      "style_profile": {
+        "directness": 4,
+        "rhythm": 4,
+        "questions": 3,
+        "hedging": 2,
+        "structure": 4,
+        "storytelling": 3,
+        "warmth": 3,
+        "persuasion": 2,
+        "spontaneity": 2
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses short, energetic beats and an occasional question to open a point. Moves through ideas with explicit step-by-step progression, then lands on direct conclusions and firm next steps. The overall tone keeps practical reassurance and favors an occasional concrete scene over topic-specific detail."
+    },
+    {
+      "id": "wendover-productions",
+      "name": "Wendover Productions",
+      "role": "English story creator",
+      "video_url": "https://www.youtube.com/@wendoverproductions",
+      "genre": "story",
+      "source_note": "First-person momentum; vivid transitions; conversational pacing.",
+      "style_profile": {
+        "directness": 3,
+        "rhythm": 3,
+        "questions": 3,
+        "hedging": 2,
+        "structure": 5,
+        "storytelling": 3,
+        "warmth": 3,
+        "persuasion": 2,
+        "spontaneity": 2
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses a steady conversational pace and an occasional question to open a point. Moves through ideas with explicit step-by-step progression, then lands on clear but balanced conclusions. The overall tone keeps practical reassurance and favors an occasional concrete scene over topic-specific detail."
+    },
+    {
+      "id": "matt-parker",
+      "name": "Matt Parker",
+      "role": "English explainer creator",
+      "video_url": "https://www.youtube.com/@mattparker",
+      "genre": "explainer",
+      "source_note": "Clear sequencing; evidence-aware context; accessible explanation.",
+      "style_profile": {
+        "directness": 3,
+        "rhythm": 2,
+        "questions": 3,
+        "hedging": 3,
+        "structure": 5,
+        "storytelling": 2,
+        "warmth": 3,
+        "persuasion": 3,
+        "spontaneity": 3
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses a measured, connected pace and an occasional question to open a point. Moves through ideas with explicit step-by-step progression, then lands on clear but balanced conclusions. The overall tone keeps practical reassurance and favors pattern-first explanation over topic-specific detail."
+    },
+    {
+      "id": "cgp-grey",
+      "name": "CGP Grey",
+      "role": "English coach creator",
+      "video_url": "https://www.youtube.com/@cgpgrey",
+      "genre": "coach",
+      "source_note": "Practical next steps; direct encouragement; action-focused framing.",
+      "style_profile": {
+        "directness": 4,
+        "rhythm": 4,
+        "questions": 3,
+        "hedging": 2,
+        "structure": 5,
+        "storytelling": 3,
+        "warmth": 3,
+        "persuasion": 2,
+        "spontaneity": 2
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses short, energetic beats and an occasional question to open a point. Moves through ideas with explicit step-by-step progression, then lands on direct conclusions and firm next steps. The overall tone keeps practical reassurance and favors an occasional concrete scene over topic-specific detail."
+    },
+    {
+      "id": "james-hoffmann",
+      "name": "James Hoffmann",
+      "role": "English interview creator",
+      "video_url": "https://www.youtube.com/@jameshoffmann",
+      "genre": "interview",
+      "source_note": "Open questions; attentive follow-up; reflective turn-taking.",
+      "style_profile": {
+        "directness": 3,
+        "rhythm": 3,
+        "questions": 2,
+        "hedging": 3,
+        "structure": 4,
+        "storytelling": 2,
+        "warmth": 3,
+        "persuasion": 2,
+        "spontaneity": 2
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses a steady conversational pace and mostly statement-led framing. Moves through ideas with explicit step-by-step progression, then lands on clear but balanced conclusions. The overall tone keeps practical reassurance and favors pattern-first explanation over topic-specific detail."
+    },
+    {
+      "id": "legaleagle",
+      "name": "LegalEagle",
+      "role": "English review creator",
+      "video_url": "https://www.youtube.com/@legaleagle",
+      "genre": "review",
+      "source_note": "Trade-off framing; concrete criteria; measured recommendation.",
+      "style_profile": {
+        "directness": 4,
+        "rhythm": 3,
+        "questions": 2,
+        "hedging": 3,
+        "structure": 4,
+        "storytelling": 2,
+        "warmth": 3,
+        "persuasion": 3,
+        "spontaneity": 2
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses a steady conversational pace and mostly statement-led framing. Moves through ideas with explicit step-by-step progression, then lands on direct conclusions and firm next steps. The overall tone keeps practical reassurance and favors pattern-first explanation over topic-specific detail."
+    },
+    {
+      "id": "doctor-mike",
+      "name": "Doctor Mike",
+      "role": "English essay creator",
+      "video_url": "https://www.youtube.com/@doctormike",
+      "genre": "essay",
+      "source_note": "Reflective connections; layered context; considered conclusion.",
+      "style_profile": {
+        "directness": 5,
+        "rhythm": 4,
+        "questions": 3,
+        "hedging": 1,
+        "structure": 3,
+        "storytelling": 3,
+        "warmth": 4,
+        "persuasion": 3,
+        "spontaneity": 3
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses short, energetic beats and an occasional question to open a point. Moves through ideas with a visible beginning, comparison, and conclusion, then lands on direct conclusions and firm next steps. The overall tone keeps warm, encouraging reassurance and favors an occasional concrete scene over topic-specific detail."
+    },
+    {
+      "id": "dr-k",
+      "name": "Dr. K",
+      "role": "English story creator",
+      "video_url": "https://www.youtube.com/@drk",
+      "genre": "story",
+      "source_note": "First-person momentum; vivid transitions; conversational pacing.",
+      "style_profile": {
+        "directness": 2,
+        "rhythm": 2,
+        "questions": 3,
+        "hedging": 3,
+        "structure": 3,
+        "storytelling": 4,
+        "warmth": 4,
+        "persuasion": 2,
+        "spontaneity": 2
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses a measured, connected pace and an occasional question to open a point. Moves through ideas with a visible beginning, comparison, and conclusion, then lands on careful and qualified conclusions. The overall tone keeps warm, encouraging reassurance and favors story-to-insight turns over topic-specific detail."
+    },
+    {
+      "id": "mina-le",
+      "name": "Mina Le",
+      "role": "English explainer creator",
+      "video_url": "https://www.youtube.com/@minale",
+      "genre": "explainer",
+      "source_note": "Clear sequencing; evidence-aware context; accessible explanation.",
+      "style_profile": {
+        "directness": 4,
+        "rhythm": 4,
+        "questions": 4,
+        "hedging": 2,
+        "structure": 3,
+        "storytelling": 4,
+        "warmth": 3,
+        "persuasion": 4,
+        "spontaneity": 4
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses short, energetic beats and frequent questions that guide the listener. Moves through ideas with a visible beginning, comparison, and conclusion, then lands on direct conclusions and firm next steps. The overall tone keeps practical reassurance and favors story-to-insight turns over topic-specific detail."
+    },
+    {
+      "id": "nerdwriter1",
+      "name": "Nerdwriter1",
+      "role": "English coach creator",
+      "video_url": "https://www.youtube.com/@nerdwriter1",
+      "genre": "coach",
+      "source_note": "Practical next steps; direct encouragement; action-focused framing.",
+      "style_profile": {
+        "directness": 3,
+        "rhythm": 4,
+        "questions": 3,
+        "hedging": 3,
+        "structure": 3,
+        "storytelling": 4,
+        "warmth": 3,
+        "persuasion": 2,
+        "spontaneity": 3
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses short, energetic beats and an occasional question to open a point. Moves through ideas with a visible beginning, comparison, and conclusion, then lands on clear but balanced conclusions. The overall tone keeps practical reassurance and favors story-to-insight turns over topic-specific detail."
+    },
+    {
+      "id": "patrick-h-willems",
+      "name": "Patrick H. Willems",
+      "role": "English interview creator",
+      "video_url": "https://www.youtube.com/@patrickhwillems",
+      "genre": "interview",
+      "source_note": "Open questions; attentive follow-up; reflective turn-taking.",
+      "style_profile": {
+        "directness": 3,
+        "rhythm": 4,
+        "questions": 3,
+        "hedging": 3,
+        "structure": 3,
+        "storytelling": 4,
+        "warmth": 3,
+        "persuasion": 2,
+        "spontaneity": 3
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses short, energetic beats and an occasional question to open a point. Moves through ideas with a visible beginning, comparison, and conclusion, then lands on clear but balanced conclusions. The overall tone keeps practical reassurance and favors story-to-insight turns over topic-specific detail."
+    },
+    {
+      "id": "lessons-from-the-screenplay",
+      "name": "Lessons from the Screenplay",
+      "role": "English review creator",
+      "video_url": "https://www.youtube.com/@lessonsfromthescreenplay",
+      "genre": "review",
+      "source_note": "Trade-off framing; concrete criteria; measured recommendation.",
+      "style_profile": {
+        "directness": 3,
+        "rhythm": 3,
+        "questions": 3,
+        "hedging": 2,
+        "structure": 5,
+        "storytelling": 3,
+        "warmth": 3,
+        "persuasion": 2,
+        "spontaneity": 2
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses a steady conversational pace and an occasional question to open a point. Moves through ideas with explicit step-by-step progression, then lands on clear but balanced conclusions. The overall tone keeps practical reassurance and favors an occasional concrete scene over topic-specific detail."
+    },
+    {
+      "id": "cinema-therapy",
+      "name": "Cinema Therapy",
+      "role": "English essay creator",
+      "video_url": "https://www.youtube.com/@cinematherapy",
+      "genre": "essay",
+      "source_note": "Reflective connections; layered context; considered conclusion.",
+      "style_profile": {
+        "directness": 3,
+        "rhythm": 3,
+        "questions": 3,
+        "hedging": 2,
+        "structure": 4,
+        "storytelling": 5,
+        "warmth": 5,
+        "persuasion": 4,
+        "spontaneity": 2
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses a steady conversational pace and an occasional question to open a point. Moves through ideas with explicit step-by-step progression, then lands on clear but balanced conclusions. The overall tone keeps warm, encouraging reassurance and favors story-to-insight turns over topic-specific detail."
+    },
+    {
+      "id": "philip-defranco",
+      "name": "Philip DeFranco",
+      "role": "English story creator",
+      "video_url": "https://www.youtube.com/@philipdefranco",
+      "genre": "story",
+      "source_note": "First-person momentum; vivid transitions; conversational pacing.",
+      "style_profile": {
+        "directness": 4,
+        "rhythm": 5,
+        "questions": 3,
+        "hedging": 2,
+        "structure": 3,
+        "storytelling": 4,
+        "warmth": 3,
+        "persuasion": 4,
+        "spontaneity": 4
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses short, energetic beats and an occasional question to open a point. Moves through ideas with a visible beginning, comparison, and conclusion, then lands on direct conclusions and firm next steps. The overall tone keeps practical reassurance and favors story-to-insight turns over topic-specific detail."
+    },
+    {
+      "id": "coffeezilla",
+      "name": "Coffeezilla",
+      "role": "English explainer creator",
+      "video_url": "https://www.youtube.com/@coffeezilla",
+      "genre": "explainer",
+      "source_note": "Clear sequencing; evidence-aware context; accessible explanation.",
+      "style_profile": {
+        "directness": 4,
+        "rhythm": 4,
+        "questions": 4,
+        "hedging": 2,
+        "structure": 4,
+        "storytelling": 4,
+        "warmth": 2,
+        "persuasion": 3,
+        "spontaneity": 3
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses short, energetic beats and frequent questions that guide the listener. Moves through ideas with explicit step-by-step progression, then lands on direct conclusions and firm next steps. The overall tone keeps calm analytical distance and favors story-to-insight turns over topic-specific detail."
+    },
+    {
+      "id": "coldfusion",
+      "name": "ColdFusion",
+      "role": "English coach creator",
+      "video_url": "https://www.youtube.com/@coldfusion",
+      "genre": "coach",
+      "source_note": "Practical next steps; direct encouragement; action-focused framing.",
+      "style_profile": {
+        "directness": 3,
+        "rhythm": 2,
+        "questions": 2,
+        "hedging": 3,
+        "structure": 5,
+        "storytelling": 2,
+        "warmth": 2,
+        "persuasion": 3,
+        "spontaneity": 1
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses a measured, connected pace and mostly statement-led framing. Moves through ideas with explicit step-by-step progression, then lands on clear but balanced conclusions. The overall tone keeps calm analytical distance and favors pattern-first explanation over topic-specific detail."
+    },
+    {
+      "id": "linus-tech-tips",
+      "name": "Linus Tech Tips",
+      "role": "English interview creator",
+      "video_url": "https://www.youtube.com/@linustechtips",
+      "genre": "interview",
+      "source_note": "Open questions; attentive follow-up; reflective turn-taking.",
+      "style_profile": {
+        "directness": 3,
+        "rhythm": 4,
+        "questions": 2,
+        "hedging": 3,
+        "structure": 4,
+        "storytelling": 2,
+        "warmth": 3,
+        "persuasion": 2,
+        "spontaneity": 4
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses short, energetic beats and mostly statement-led framing. Moves through ideas with explicit step-by-step progression, then lands on clear but balanced conclusions. The overall tone keeps practical reassurance and favors pattern-first explanation over topic-specific detail."
+    },
+    {
+      "id": "ijustine",
+      "name": "iJustine",
+      "role": "English review creator",
+      "video_url": "https://www.youtube.com/@ijustine",
+      "genre": "review",
+      "source_note": "Trade-off framing; concrete criteria; measured recommendation.",
+      "style_profile": {
+        "directness": 3,
+        "rhythm": 3,
+        "questions": 2,
+        "hedging": 3,
+        "structure": 4,
+        "storytelling": 2,
+        "warmth": 4,
+        "persuasion": 2,
+        "spontaneity": 3
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses a steady conversational pace and mostly statement-led framing. Moves through ideas with explicit step-by-step progression, then lands on clear but balanced conclusions. The overall tone keeps warm, encouraging reassurance and favors pattern-first explanation over topic-specific detail."
+    },
+    {
+      "id": "dave2d",
+      "name": "Dave2D",
+      "role": "English essay creator",
+      "video_url": "https://www.youtube.com/@dave2d",
+      "genre": "essay",
+      "source_note": "Reflective connections; layered context; considered conclusion.",
+      "style_profile": {
+        "directness": 3,
+        "rhythm": 3,
+        "questions": 2,
+        "hedging": 3,
+        "structure": 4,
+        "storytelling": 2,
+        "warmth": 3,
+        "persuasion": 2,
+        "spontaneity": 2
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses a steady conversational pace and mostly statement-led framing. Moves through ideas with explicit step-by-step progression, then lands on clear but balanced conclusions. The overall tone keeps practical reassurance and favors pattern-first explanation over topic-specific detail."
+    },
+    {
+      "id": "mrwhosetheboss",
+      "name": "Mrwhosetheboss",
+      "role": "English story creator",
+      "video_url": "https://www.youtube.com/@mrwhosetheboss",
+      "genre": "story",
+      "source_note": "First-person momentum; vivid transitions; conversational pacing.",
+      "style_profile": {
+        "directness": 3,
+        "rhythm": 4,
+        "questions": 2,
+        "hedging": 3,
+        "structure": 4,
+        "storytelling": 2,
+        "warmth": 3,
+        "persuasion": 2,
+        "spontaneity": 2
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses short, energetic beats and mostly statement-led framing. Moves through ideas with explicit step-by-step progression, then lands on clear but balanced conclusions. The overall tone keeps practical reassurance and favors pattern-first explanation over topic-specific detail."
+    },
+    {
+      "id": "safiya-nygaard",
+      "name": "Safiya Nygaard",
+      "role": "English explainer creator",
+      "video_url": "https://www.youtube.com/@safiyanygaard",
+      "genre": "explainer",
+      "source_note": "Clear sequencing; evidence-aware context; accessible explanation.",
+      "style_profile": {
+        "directness": 3,
+        "rhythm": 3,
+        "questions": 3,
+        "hedging": 2,
+        "structure": 3,
+        "storytelling": 4,
+        "warmth": 3,
+        "persuasion": 4,
+        "spontaneity": 4
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses a steady conversational pace and an occasional question to open a point. Moves through ideas with a visible beginning, comparison, and conclusion, then lands on clear but balanced conclusions. The overall tone keeps practical reassurance and favors story-to-insight turns over topic-specific detail."
+    },
+    {
+      "id": "micarah-tewers",
+      "name": "Micarah Tewers",
+      "role": "English coach creator",
+      "video_url": "https://www.youtube.com/@micarahtewers",
+      "genre": "coach",
+      "source_note": "Practical next steps; direct encouragement; action-focused framing.",
+      "style_profile": {
+        "directness": 2,
+        "rhythm": 4,
+        "questions": 3,
+        "hedging": 4,
+        "structure": 1,
+        "storytelling": 4,
+        "warmth": 3,
+        "persuasion": 1,
+        "spontaneity": 5
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses short, energetic beats and an occasional question to open a point. Moves through ideas with a looser reflective build, then lands on careful and qualified conclusions. The overall tone keeps practical reassurance and favors story-to-insight turns over topic-specific detail."
+    },
+    {
+      "id": "drew-gooden",
+      "name": "Drew Gooden",
+      "role": "English interview creator",
+      "video_url": "https://www.youtube.com/@drewgooden",
+      "genre": "interview",
+      "source_note": "Open questions; attentive follow-up; reflective turn-taking.",
+      "style_profile": {
+        "directness": 2,
+        "rhythm": 4,
+        "questions": 3,
+        "hedging": 4,
+        "structure": 1,
+        "storytelling": 4,
+        "warmth": 3,
+        "persuasion": 1,
+        "spontaneity": 5
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses short, energetic beats and an occasional question to open a point. Moves through ideas with a looser reflective build, then lands on careful and qualified conclusions. The overall tone keeps practical reassurance and favors story-to-insight turns over topic-specific detail."
+    },
+    {
+      "id": "danny-gonzalez",
+      "name": "Danny Gonzalez",
+      "role": "English review creator",
+      "video_url": "https://www.youtube.com/@dannygonzalez",
+      "genre": "review",
+      "source_note": "Trade-off framing; concrete criteria; measured recommendation.",
+      "style_profile": {
+        "directness": 2,
+        "rhythm": 4,
+        "questions": 3,
+        "hedging": 4,
+        "structure": 1,
+        "storytelling": 4,
+        "warmth": 3,
+        "persuasion": 1,
+        "spontaneity": 5
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses short, energetic beats and an occasional question to open a point. Moves through ideas with a looser reflective build, then lands on careful and qualified conclusions. The overall tone keeps practical reassurance and favors story-to-insight turns over topic-specific detail."
+    },
+    {
+      "id": "kurtis-conner",
+      "name": "Kurtis Conner",
+      "role": "English essay creator",
+      "video_url": "https://www.youtube.com/@kurtisconner",
+      "genre": "essay",
+      "source_note": "Reflective connections; layered context; considered conclusion.",
+      "style_profile": {
+        "directness": 2,
+        "rhythm": 4,
+        "questions": 3,
+        "hedging": 4,
+        "structure": 1,
+        "storytelling": 4,
+        "warmth": 3,
+        "persuasion": 1,
+        "spontaneity": 5
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses short, energetic beats and an occasional question to open a point. Moves through ideas with a looser reflective build, then lands on careful and qualified conclusions. The overall tone keeps practical reassurance and favors story-to-insight turns over topic-specific detail."
+    },
+    {
+      "id": "jarvis-johnson",
+      "name": "Jarvis Johnson",
+      "role": "English story creator",
+      "video_url": "https://www.youtube.com/@jarvisjohnson",
+      "genre": "story",
+      "source_note": "First-person momentum; vivid transitions; conversational pacing.",
+      "style_profile": {
+        "directness": 2,
+        "rhythm": 4,
+        "questions": 3,
+        "hedging": 4,
+        "structure": 1,
+        "storytelling": 4,
+        "warmth": 3,
+        "persuasion": 1,
+        "spontaneity": 5
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses short, energetic beats and an occasional question to open a point. Moves through ideas with a looser reflective build, then lands on careful and qualified conclusions. The overall tone keeps practical reassurance and favors story-to-insight turns over topic-specific detail."
+    },
+    {
+      "id": "contrapoints",
+      "name": "ContraPoints",
+      "role": "English explainer creator",
+      "video_url": "https://www.youtube.com/@contrapoints",
+      "genre": "explainer",
+      "source_note": "Clear sequencing; evidence-aware context; accessible explanation.",
+      "style_profile": {
+        "directness": 3,
+        "rhythm": 4,
+        "questions": 4,
+        "hedging": 2,
+        "structure": 3,
+        "storytelling": 4,
+        "warmth": 3,
+        "persuasion": 4,
+        "spontaneity": 3
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses short, energetic beats and frequent questions that guide the listener. Moves through ideas with a visible beginning, comparison, and conclusion, then lands on clear but balanced conclusions. The overall tone keeps practical reassurance and favors story-to-insight turns over topic-specific detail."
+    },
+    {
+      "id": "philosophy-tube",
+      "name": "Philosophy Tube",
+      "role": "English coach creator",
+      "video_url": "https://www.youtube.com/@philosophytube",
+      "genre": "coach",
+      "source_note": "Practical next steps; direct encouragement; action-focused framing.",
+      "style_profile": {
+        "directness": 3,
+        "rhythm": 4,
+        "questions": 4,
+        "hedging": 2,
+        "structure": 3,
+        "storytelling": 4,
+        "warmth": 3,
+        "persuasion": 4,
+        "spontaneity": 3
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses short, energetic beats and frequent questions that guide the listener. Moves through ideas with a visible beginning, comparison, and conclusion, then lands on clear but balanced conclusions. The overall tone keeps practical reassurance and favors story-to-insight turns over topic-specific detail."
+    },
+    {
+      "id": "fd-signifier",
+      "name": "FD Signifier",
+      "role": "English interview creator",
+      "video_url": "https://www.youtube.com/@fdsignifier",
+      "genre": "interview",
+      "source_note": "Open questions; attentive follow-up; reflective turn-taking.",
+      "style_profile": {
+        "directness": 4,
+        "rhythm": 4,
+        "questions": 4,
+        "hedging": 2,
+        "structure": 3,
+        "storytelling": 4,
+        "warmth": 3,
+        "persuasion": 4,
+        "spontaneity": 4
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses short, energetic beats and frequent questions that guide the listener. Moves through ideas with a visible beginning, comparison, and conclusion, then lands on direct conclusions and firm next steps. The overall tone keeps practical reassurance and favors story-to-insight turns over topic-specific detail."
+    },
+    {
+      "id": "khadija-mbowe",
+      "name": "Khadija Mbowe",
+      "role": "English review creator",
+      "video_url": "https://www.youtube.com/@khadijambowe",
+      "genre": "review",
+      "source_note": "Trade-off framing; concrete criteria; measured recommendation.",
+      "style_profile": {
+        "directness": 3,
+        "rhythm": 3,
+        "questions": 4,
+        "hedging": 2,
+        "structure": 3,
+        "storytelling": 4,
+        "warmth": 3,
+        "persuasion": 3,
+        "spontaneity": 4
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses a steady conversational pace and frequent questions that guide the listener. Moves through ideas with a visible beginning, comparison, and conclusion, then lands on clear but balanced conclusions. The overall tone keeps practical reassurance and favors story-to-insight turns over topic-specific detail."
+    },
+    {
+      "id": "jordan-harrod",
+      "name": "Jordan Harrod",
+      "role": "English essay creator",
+      "video_url": "https://www.youtube.com/@jordanharrod",
+      "genre": "essay",
+      "source_note": "Reflective connections; layered context; considered conclusion.",
+      "style_profile": {
+        "directness": 3,
+        "rhythm": 3,
+        "questions": 3,
+        "hedging": 2,
+        "structure": 5,
+        "storytelling": 2,
+        "warmth": 3,
+        "persuasion": 2,
+        "spontaneity": 2
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses a steady conversational pace and an occasional question to open a point. Moves through ideas with explicit step-by-step progression, then lands on clear but balanced conclusions. The overall tone keeps practical reassurance and favors pattern-first explanation over topic-specific detail."
+    },
+    {
+      "id": "simone-giertz",
+      "name": "Simone Giertz",
+      "role": "English story creator",
+      "video_url": "https://www.youtube.com/@simonegiertz",
+      "genre": "story",
+      "source_note": "First-person momentum; vivid transitions; conversational pacing.",
+      "style_profile": {
+        "directness": 3,
+        "rhythm": 3,
+        "questions": 3,
+        "hedging": 2,
+        "structure": 4,
+        "storytelling": 4,
+        "warmth": 3,
+        "persuasion": 2,
+        "spontaneity": 4
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses a steady conversational pace and an occasional question to open a point. Moves through ideas with explicit step-by-step progression, then lands on clear but balanced conclusions. The overall tone keeps practical reassurance and favors story-to-insight turns over topic-specific detail."
+    },
+    {
+      "id": "stuff-made-here",
+      "name": "Stuff Made Here",
+      "role": "English explainer creator",
+      "video_url": "https://www.youtube.com/@stuffmadehere",
+      "genre": "explainer",
+      "source_note": "Clear sequencing; evidence-aware context; accessible explanation.",
+      "style_profile": {
+        "directness": 3,
+        "rhythm": 2,
+        "questions": 2,
+        "hedging": 3,
+        "structure": 5,
+        "storytelling": 2,
+        "warmth": 2,
+        "persuasion": 3,
+        "spontaneity": 3
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses a measured, connected pace and mostly statement-led framing. Moves through ideas with explicit step-by-step progression, then lands on clear but balanced conclusions. The overall tone keeps calm analytical distance and favors pattern-first explanation over topic-specific detail."
+    },
+    {
+      "id": "william-osman",
+      "name": "William Osman",
+      "role": "English coach creator",
+      "video_url": "https://www.youtube.com/@williamosman",
+      "genre": "coach",
+      "source_note": "Practical next steps; direct encouragement; action-focused framing.",
+      "style_profile": {
+        "directness": 2,
+        "rhythm": 4,
+        "questions": 3,
+        "hedging": 4,
+        "structure": 2,
+        "storytelling": 4,
+        "warmth": 3,
+        "persuasion": 1,
+        "spontaneity": 5
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses short, energetic beats and an occasional question to open a point. Moves through ideas with a looser reflective build, then lands on careful and qualified conclusions. The overall tone keeps practical reassurance and favors story-to-insight turns over topic-specific detail."
+    },
+    {
+      "id": "colin-and-samir",
+      "name": "Colin and Samir",
+      "role": "English interview creator",
+      "video_url": "https://www.youtube.com/@colinandsamir",
+      "genre": "interview",
+      "source_note": "Open questions; attentive follow-up; reflective turn-taking.",
+      "style_profile": {
+        "directness": 2,
+        "rhythm": 3,
+        "questions": 4,
+        "hedging": 3,
+        "structure": 3,
+        "storytelling": 3,
+        "warmth": 3,
+        "persuasion": 2,
+        "spontaneity": 3
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses a steady conversational pace and frequent questions that guide the listener. Moves through ideas with a visible beginning, comparison, and conclusion, then lands on careful and qualified conclusions. The overall tone keeps practical reassurance and favors an occasional concrete scene over topic-specific detail."
+    },
+    {
+      "id": "peter-mckinnon",
+      "name": "Peter McKinnon",
+      "role": "English review creator",
+      "video_url": "https://www.youtube.com/@petermckinnon",
+      "genre": "review",
+      "source_note": "Trade-off framing; concrete criteria; measured recommendation.",
+      "style_profile": {
+        "directness": 4,
+        "rhythm": 5,
+        "questions": 2,
+        "hedging": 1,
+        "structure": 3,
+        "storytelling": 4,
+        "warmth": 3,
+        "persuasion": 3,
+        "spontaneity": 4
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses short, energetic beats and mostly statement-led framing. Moves through ideas with a visible beginning, comparison, and conclusion, then lands on direct conclusions and firm next steps. The overall tone keeps practical reassurance and favors story-to-insight turns over topic-specific detail."
+    },
+    {
+      "id": "yoga-with-adriene",
+      "name": "Yoga With Adriene",
+      "role": "English essay creator",
+      "video_url": "https://www.youtube.com/@yogawithadriene",
+      "genre": "essay",
+      "source_note": "Reflective connections; layered context; considered conclusion.",
+      "style_profile": {
+        "directness": 3,
+        "rhythm": 2,
+        "questions": 3,
+        "hedging": 3,
+        "structure": 3,
+        "storytelling": 4,
+        "warmth": 5,
+        "persuasion": 2,
+        "spontaneity": 2
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses a measured, connected pace and an occasional question to open a point. Moves through ideas with a visible beginning, comparison, and conclusion, then lands on clear but balanced conclusions. The overall tone keeps warm, encouraging reassurance and favors story-to-insight turns over topic-specific detail."
+    },
+    {
+      "id": "anna-akana",
+      "name": "Anna Akana",
+      "role": "English story creator",
+      "video_url": "https://www.youtube.com/@annaakana",
+      "genre": "story",
+      "source_note": "First-person momentum; vivid transitions; conversational pacing.",
+      "style_profile": {
+        "directness": 3,
+        "rhythm": 3,
+        "questions": 3,
+        "hedging": 2,
+        "structure": 3,
+        "storytelling": 4,
+        "warmth": 4,
+        "persuasion": 3,
+        "spontaneity": 3
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses a steady conversational pace and an occasional question to open a point. Moves through ideas with a visible beginning, comparison, and conclusion, then lands on clear but balanced conclusions. The overall tone keeps warm, encouraging reassurance and favors story-to-insight turns over topic-specific detail."
+    },
+    {
+      "id": "mark-wiens",
+      "name": "Mark Wiens",
+      "role": "English explainer creator",
+      "video_url": "https://www.youtube.com/@markwiens",
+      "genre": "explainer",
+      "source_note": "Clear sequencing; evidence-aware context; accessible explanation.",
+      "style_profile": {
+        "directness": 4,
+        "rhythm": 5,
+        "questions": 2,
+        "hedging": 1,
+        "structure": 3,
+        "storytelling": 4,
+        "warmth": 4,
+        "persuasion": 2,
+        "spontaneity": 4
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses short, energetic beats and mostly statement-led framing. Moves through ideas with a visible beginning, comparison, and conclusion, then lands on direct conclusions and firm next steps. The overall tone keeps warm, encouraging reassurance and favors story-to-insight turns over topic-specific detail."
+    },
+    {
+      "id": "sorted-food",
+      "name": "Sorted Food",
+      "role": "English coach creator",
+      "video_url": "https://www.youtube.com/@sortedfood",
+      "genre": "coach",
+      "source_note": "Practical next steps; direct encouragement; action-focused framing.",
+      "style_profile": {
+        "directness": 3,
+        "rhythm": 3,
+        "questions": 2,
+        "hedging": 2,
+        "structure": 4,
+        "storytelling": 3,
+        "warmth": 4,
+        "persuasion": 2,
+        "spontaneity": 4
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses a steady conversational pace and mostly statement-led framing. Moves through ideas with explicit step-by-step progression, then lands on clear but balanced conclusions. The overall tone keeps warm, encouraging reassurance and favors an occasional concrete scene over topic-specific detail."
+    },
+    {
+      "id": "babish",
+      "name": "Babish",
+      "role": "English interview creator",
+      "video_url": "https://www.youtube.com/@babish",
+      "genre": "interview",
+      "source_note": "Open questions; attentive follow-up; reflective turn-taking.",
+      "style_profile": {
+        "directness": 3,
+        "rhythm": 3,
+        "questions": 2,
+        "hedging": 2,
+        "structure": 4,
+        "storytelling": 3,
+        "warmth": 3,
+        "persuasion": 2,
+        "spontaneity": 2
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses a steady conversational pace and mostly statement-led framing. Moves through ideas with explicit step-by-step progression, then lands on clear but balanced conclusions. The overall tone keeps practical reassurance and favors an occasional concrete scene over topic-specific detail."
+    },
+    {
+      "id": "joshua-weissman",
+      "name": "Joshua Weissman",
+      "role": "English review creator",
+      "video_url": "https://www.youtube.com/@joshuaweissman",
+      "genre": "review",
+      "source_note": "Trade-off framing; concrete criteria; measured recommendation.",
+      "style_profile": {
+        "directness": 4,
+        "rhythm": 4,
+        "questions": 2,
+        "hedging": 2,
+        "structure": 4,
+        "storytelling": 3,
+        "warmth": 3,
+        "persuasion": 2,
+        "spontaneity": 4
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses short, energetic beats and mostly statement-led framing. Moves through ideas with explicit step-by-step progression, then lands on direct conclusions and firm next steps. The overall tone keeps practical reassurance and favors an occasional concrete scene over topic-specific detail."
+    },
+    {
+      "id": "j-kenji-lopez-alt",
+      "name": "J. Kenji López-Alt",
+      "role": "English essay creator",
+      "video_url": "https://www.youtube.com/@jkenjilopezalt",
+      "genre": "essay",
+      "source_note": "Reflective connections; layered context; considered conclusion.",
+      "style_profile": {
+        "directness": 2,
+        "rhythm": 2,
+        "questions": 2,
+        "hedging": 3,
+        "structure": 4,
+        "storytelling": 3,
+        "warmth": 3,
+        "persuasion": 2,
+        "spontaneity": 3
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses a measured, connected pace and mostly statement-led framing. Moves through ideas with explicit step-by-step progression, then lands on careful and qualified conclusions. The overall tone keeps practical reassurance and favors an occasional concrete scene over topic-specific detail."
+    },
+    {
+      "id": "claire-saffitz",
+      "name": "Claire Saffitz",
+      "role": "English story creator",
+      "video_url": "https://www.youtube.com/@clairesaffitz",
+      "genre": "story",
+      "source_note": "First-person momentum; vivid transitions; conversational pacing.",
+      "style_profile": {
+        "directness": 3,
+        "rhythm": 3,
+        "questions": 2,
+        "hedging": 2,
+        "structure": 4,
+        "storytelling": 3,
+        "warmth": 4,
+        "persuasion": 2,
+        "spontaneity": 3
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses a steady conversational pace and mostly statement-led framing. Moves through ideas with explicit step-by-step progression, then lands on clear but balanced conclusions. The overall tone keeps warm, encouraging reassurance and favors an occasional concrete scene over topic-specific detail."
+    },
+    {
+      "id": "how-to-cook-that",
+      "name": "How To Cook That",
+      "role": "English explainer creator",
+      "video_url": "https://www.youtube.com/@howtocookthat",
+      "genre": "explainer",
+      "source_note": "Clear sequencing; evidence-aware context; accessible explanation.",
+      "style_profile": {
+        "directness": 3,
+        "rhythm": 3,
+        "questions": 3,
+        "hedging": 2,
+        "structure": 5,
+        "storytelling": 3,
+        "warmth": 3,
+        "persuasion": 2,
+        "spontaneity": 2
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses a steady conversational pace and an occasional question to open a point. Moves through ideas with explicit step-by-step progression, then lands on clear but balanced conclusions. The overall tone keeps practical reassurance and favors an occasional concrete scene over topic-specific detail."
+    },
+    {
+      "id": "rosanna-pansino",
+      "name": "Rosanna Pansino",
+      "role": "English coach creator",
+      "video_url": "https://www.youtube.com/@rosannapansino",
+      "genre": "coach",
+      "source_note": "Practical next steps; direct encouragement; action-focused framing.",
+      "style_profile": {
+        "directness": 3,
+        "rhythm": 3,
+        "questions": 2,
+        "hedging": 2,
+        "structure": 4,
+        "storytelling": 3,
+        "warmth": 5,
+        "persuasion": 2,
+        "spontaneity": 3
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses a steady conversational pace and mostly statement-led framing. Moves through ideas with explicit step-by-step progression, then lands on clear but balanced conclusions. The overall tone keeps warm, encouraging reassurance and favors an occasional concrete scene over topic-specific detail."
+    },
+    {
+      "id": "rhett-and-link",
+      "name": "Rhett and Link",
+      "role": "English interview creator",
+      "video_url": "https://www.youtube.com/@rhettandlink",
+      "genre": "interview",
+      "source_note": "Open questions; attentive follow-up; reflective turn-taking.",
+      "style_profile": {
+        "directness": 3,
+        "rhythm": 4,
+        "questions": 3,
+        "hedging": 3,
+        "structure": 3,
+        "storytelling": 4,
+        "warmth": 4,
+        "persuasion": 2,
+        "spontaneity": 4
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses short, energetic beats and an occasional question to open a point. Moves through ideas with a visible beginning, comparison, and conclusion, then lands on clear but balanced conclusions. The overall tone keeps warm, encouraging reassurance and favors story-to-insight turns over topic-specific detail."
+    },
+    {
+      "id": "kallmekris",
+      "name": "KallmeKris",
+      "role": "English review creator",
+      "video_url": "https://www.youtube.com/@kallmekris",
+      "genre": "review",
+      "source_note": "Trade-off framing; concrete criteria; measured recommendation.",
+      "style_profile": {
+        "directness": 2,
+        "rhythm": 4,
+        "questions": 2,
+        "hedging": 4,
+        "structure": 1,
+        "storytelling": 4,
+        "warmth": 3,
+        "persuasion": 1,
+        "spontaneity": 5
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses short, energetic beats and mostly statement-led framing. Moves through ideas with a looser reflective build, then lands on careful and qualified conclusions. The overall tone keeps practical reassurance and favors story-to-insight turns over topic-specific detail."
+    },
+    {
+      "id": "brittany-broski",
+      "name": "Brittany Broski",
+      "role": "English essay creator",
+      "video_url": "https://www.youtube.com/@brittanybroski",
+      "genre": "essay",
+      "source_note": "Reflective connections; layered context; considered conclusion.",
+      "style_profile": {
+        "directness": 2,
+        "rhythm": 4,
+        "questions": 3,
+        "hedging": 4,
+        "structure": 1,
+        "storytelling": 4,
+        "warmth": 3,
+        "persuasion": 1,
+        "spontaneity": 5
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses short, energetic beats and an occasional question to open a point. Moves through ideas with a looser reflective build, then lands on careful and qualified conclusions. The overall tone keeps practical reassurance and favors story-to-insight turns over topic-specific detail."
+    },
+    {
+      "id": "tiffany-ferg",
+      "name": "Tiffany Ferg",
+      "role": "English story creator",
+      "video_url": "https://www.youtube.com/@tiffanyferg",
+      "genre": "story",
+      "source_note": "First-person momentum; vivid transitions; conversational pacing.",
+      "style_profile": {
+        "directness": 3,
+        "rhythm": 3,
+        "questions": 3,
+        "hedging": 2,
+        "structure": 3,
+        "storytelling": 4,
+        "warmth": 3,
+        "persuasion": 3,
+        "spontaneity": 2
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses a steady conversational pace and an occasional question to open a point. Moves through ideas with a visible beginning, comparison, and conclusion, then lands on clear but balanced conclusions. The overall tone keeps practical reassurance and favors story-to-insight turns over topic-specific detail."
+    },
+    {
+      "id": "hasan-minhaj",
+      "name": "Hasan Minhaj",
+      "role": "English explainer creator",
+      "video_url": "https://www.youtube.com/@hasanminhaj",
+      "genre": "explainer",
+      "source_note": "Clear sequencing; evidence-aware context; accessible explanation.",
+      "style_profile": {
+        "directness": 4,
+        "rhythm": 5,
+        "questions": 3,
+        "hedging": 2,
+        "structure": 3,
+        "storytelling": 5,
+        "warmth": 3,
+        "persuasion": 4,
+        "spontaneity": 3
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses short, energetic beats and an occasional question to open a point. Moves through ideas with a visible beginning, comparison, and conclusion, then lands on direct conclusions and firm next steps. The overall tone keeps practical reassurance and favors story-to-insight turns over topic-specific detail."
+    },
+    {
+      "id": "john-oliver",
+      "name": "John Oliver",
+      "role": "English coach creator",
+      "video_url": "https://www.youtube.com/@johnoliver",
+      "genre": "coach",
+      "source_note": "Practical next steps; direct encouragement; action-focused framing.",
+      "style_profile": {
+        "directness": 4,
+        "rhythm": 4,
+        "questions": 4,
+        "hedging": 2,
+        "structure": 3,
+        "storytelling": 4,
+        "warmth": 3,
+        "persuasion": 4,
+        "spontaneity": 3
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses short, energetic beats and frequent questions that guide the listener. Moves through ideas with a visible beginning, comparison, and conclusion, then lands on direct conclusions and firm next steps. The overall tone keeps practical reassurance and favors story-to-insight turns over topic-specific detail."
+    },
+    {
+      "id": "erika-kullberg",
+      "name": "Erika Kullberg",
+      "role": "English interview creator",
+      "video_url": "https://www.youtube.com/@erikakullberg",
+      "genre": "interview",
+      "source_note": "Open questions; attentive follow-up; reflective turn-taking.",
+      "style_profile": {
+        "directness": 4,
+        "rhythm": 4,
+        "questions": 2,
+        "hedging": 3,
+        "structure": 4,
+        "storytelling": 2,
+        "warmth": 3,
+        "persuasion": 3,
+        "spontaneity": 2
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses short, energetic beats and mostly statement-led framing. Moves through ideas with explicit step-by-step progression, then lands on direct conclusions and firm next steps. The overall tone keeps practical reassurance and favors pattern-first explanation over topic-specific detail."
+    },
+    {
+      "id": "codie-sanchez",
+      "name": "Codie Sanchez",
+      "role": "English review creator",
+      "video_url": "https://www.youtube.com/@codiesanchez",
+      "genre": "review",
+      "source_note": "Trade-off framing; concrete criteria; measured recommendation.",
+      "style_profile": {
+        "directness": 5,
+        "rhythm": 4,
+        "questions": 3,
+        "hedging": 1,
+        "structure": 5,
+        "storytelling": 3,
+        "warmth": 2,
+        "persuasion": 5,
+        "spontaneity": 2
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses short, energetic beats and an occasional question to open a point. Moves through ideas with explicit step-by-step progression, then lands on direct conclusions and firm next steps. The overall tone keeps calm analytical distance and favors an occasional concrete scene over topic-specific detail."
+    },
+    {
+      "id": "leila-hormozi",
+      "name": "Leila Hormozi",
+      "role": "English essay creator",
+      "video_url": "https://www.youtube.com/@leilahormozi",
+      "genre": "essay",
+      "source_note": "Reflective connections; layered context; considered conclusion.",
+      "style_profile": {
+        "directness": 5,
+        "rhythm": 4,
+        "questions": 3,
+        "hedging": 1,
+        "structure": 5,
+        "storytelling": 2,
+        "warmth": 3,
+        "persuasion": 5,
+        "spontaneity": 2
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses short, energetic beats and an occasional question to open a point. Moves through ideas with explicit step-by-step progression, then lands on direct conclusions and firm next steps. The overall tone keeps practical reassurance and favors pattern-first explanation over topic-specific detail."
+    },
+    {
+      "id": "sahil-bloom",
+      "name": "Sahil Bloom",
+      "role": "English story creator",
+      "video_url": "https://www.youtube.com/@sahilbloom",
+      "genre": "story",
+      "source_note": "First-person momentum; vivid transitions; conversational pacing.",
+      "style_profile": {
+        "directness": 3,
+        "rhythm": 3,
+        "questions": 3,
+        "hedging": 2,
+        "structure": 4,
+        "storytelling": 4,
+        "warmth": 4,
+        "persuasion": 4,
+        "spontaneity": 2
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses a steady conversational pace and an occasional question to open a point. Moves through ideas with explicit step-by-step progression, then lands on clear but balanced conclusions. The overall tone keeps warm, encouraging reassurance and favors story-to-insight turns over topic-specific detail."
+    },
+    {
+      "id": "scott-galloway",
+      "name": "Scott Galloway",
+      "role": "English explainer creator",
+      "video_url": "https://www.youtube.com/@scottgalloway",
+      "genre": "explainer",
+      "source_note": "Clear sequencing; evidence-aware context; accessible explanation.",
+      "style_profile": {
+        "directness": 5,
+        "rhythm": 4,
+        "questions": 3,
+        "hedging": 1,
+        "structure": 4,
+        "storytelling": 3,
+        "warmth": 2,
+        "persuasion": 5,
+        "spontaneity": 3
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses short, energetic beats and an occasional question to open a point. Moves through ideas with explicit step-by-step progression, then lands on direct conclusions and firm next steps. The overall tone keeps calm analytical distance and favors an occasional concrete scene over topic-specific detail."
+    },
+    {
+      "id": "ramit-sethi",
+      "name": "Ramit Sethi",
+      "role": "English coach creator",
+      "video_url": "https://www.youtube.com/@ramitsethi",
+      "genre": "coach",
+      "source_note": "Practical next steps; direct encouragement; action-focused framing.",
+      "style_profile": {
+        "directness": 5,
+        "rhythm": 4,
+        "questions": 3,
+        "hedging": 1,
+        "structure": 4,
+        "storytelling": 3,
+        "warmth": 4,
+        "persuasion": 5,
+        "spontaneity": 3
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses short, energetic beats and an occasional question to open a point. Moves through ideas with explicit step-by-step progression, then lands on direct conclusions and firm next steps. The overall tone keeps warm, encouraging reassurance and favors an occasional concrete scene over topic-specific detail."
+    },
+    {
+      "id": "kara-swisher",
+      "name": "Kara Swisher",
+      "role": "English interview creator",
+      "video_url": "https://www.youtube.com/@karaswisher",
+      "genre": "interview",
+      "source_note": "Open questions; attentive follow-up; reflective turn-taking.",
+      "style_profile": {
+        "directness": 4,
+        "rhythm": 3,
+        "questions": 4,
+        "hedging": 2,
+        "structure": 2,
+        "storytelling": 3,
+        "warmth": 3,
+        "persuasion": 2,
+        "spontaneity": 3
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses a steady conversational pace and frequent questions that guide the listener. Moves through ideas with a looser reflective build, then lands on direct conclusions and firm next steps. The overall tone keeps practical reassurance and favors an occasional concrete scene over topic-specific detail."
+    },
+    {
+      "id": "guy-raz",
+      "name": "Guy Raz",
+      "role": "English review creator",
+      "video_url": "https://www.youtube.com/@guyraz",
+      "genre": "review",
+      "source_note": "Trade-off framing; concrete criteria; measured recommendation.",
+      "style_profile": {
+        "directness": 2,
+        "rhythm": 2,
+        "questions": 5,
+        "hedging": 4,
+        "structure": 2,
+        "storytelling": 4,
+        "warmth": 4,
+        "persuasion": 2,
+        "spontaneity": 3
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses a measured, connected pace and frequent questions that guide the listener. Moves through ideas with a looser reflective build, then lands on careful and qualified conclusions. The overall tone keeps warm, encouraging reassurance and favors story-to-insight turns over topic-specific detail."
+    },
+    {
+      "id": "lewis-howes",
+      "name": "Lewis Howes",
+      "role": "English essay creator",
+      "video_url": "https://www.youtube.com/@lewishowes",
+      "genre": "essay",
+      "source_note": "Reflective connections; layered context; considered conclusion.",
+      "style_profile": {
+        "directness": 5,
+        "rhythm": 4,
+        "questions": 3,
+        "hedging": 1,
+        "structure": 4,
+        "storytelling": 3,
+        "warmth": 4,
+        "persuasion": 5,
+        "spontaneity": 3
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses short, energetic beats and an occasional question to open a point. Moves through ideas with explicit step-by-step progression, then lands on direct conclusions and firm next steps. The overall tone keeps warm, encouraging reassurance and favors an occasional concrete scene over topic-specific detail."
+    },
+    {
+      "id": "rich-roll",
+      "name": "Rich Roll",
+      "role": "English story creator",
+      "video_url": "https://www.youtube.com/@richroll",
+      "genre": "story",
+      "source_note": "First-person momentum; vivid transitions; conversational pacing.",
+      "style_profile": {
+        "directness": 2,
+        "rhythm": 2,
+        "questions": 3,
+        "hedging": 3,
+        "structure": 3,
+        "storytelling": 4,
+        "warmth": 4,
+        "persuasion": 2,
+        "spontaneity": 3
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses a measured, connected pace and an occasional question to open a point. Moves through ideas with a visible beginning, comparison, and conclusion, then lands on careful and qualified conclusions. The overall tone keeps warm, encouraging reassurance and favors story-to-insight turns over topic-specific detail."
+    },
+    {
+      "id": "matthew-hussey",
+      "name": "Matthew Hussey",
+      "role": "English explainer creator",
+      "video_url": "https://www.youtube.com/@matthewhussey",
+      "genre": "explainer",
+      "source_note": "Clear sequencing; evidence-aware context; accessible explanation.",
+      "style_profile": {
+        "directness": 5,
+        "rhythm": 4,
+        "questions": 3,
+        "hedging": 1,
+        "structure": 4,
+        "storytelling": 3,
+        "warmth": 4,
+        "persuasion": 5,
+        "spontaneity": 3
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses short, energetic beats and an occasional question to open a point. Moves through ideas with explicit step-by-step progression, then lands on direct conclusions and firm next steps. The overall tone keeps warm, encouraging reassurance and favors an occasional concrete scene over topic-specific detail."
+    },
+    {
+      "id": "the-school-of-life",
+      "name": "The School of Life",
+      "role": "English coach creator",
+      "video_url": "https://www.youtube.com/@theschooloflife",
+      "genre": "coach",
+      "source_note": "Practical next steps; direct encouragement; action-focused framing.",
+      "style_profile": {
+        "directness": 3,
+        "rhythm": 2,
+        "questions": 3,
+        "hedging": 2,
+        "structure": 4,
+        "storytelling": 3,
+        "warmth": 4,
+        "persuasion": 2,
+        "spontaneity": 2
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses a measured, connected pace and an occasional question to open a point. Moves through ideas with explicit step-by-step progression, then lands on clear but balanced conclusions. The overall tone keeps warm, encouraging reassurance and favors an occasional concrete scene over topic-specific detail."
+    },
+    {
+      "id": "big-think",
+      "name": "Big Think",
+      "role": "English interview creator",
+      "video_url": "https://www.youtube.com/@bigthink",
+      "genre": "interview",
+      "source_note": "Open questions; attentive follow-up; reflective turn-taking.",
+      "style_profile": {
+        "directness": 3,
+        "rhythm": 3,
+        "questions": 2,
+        "hedging": 2,
+        "structure": 5,
+        "storytelling": 3,
+        "warmth": 3,
+        "persuasion": 2,
+        "spontaneity": 2
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses a steady conversational pace and mostly statement-led framing. Moves through ideas with explicit step-by-step progression, then lands on clear but balanced conclusions. The overall tone keeps practical reassurance and favors an occasional concrete scene over topic-specific detail."
+    },
+    {
+      "id": "matthew-dicks",
+      "name": "Matthew Dicks",
+      "role": "English review creator",
+      "video_url": "https://www.youtube.com/@matthewdicks",
+      "genre": "review",
+      "source_note": "Trade-off framing; concrete criteria; measured recommendation.",
+      "style_profile": {
+        "directness": 3,
+        "rhythm": 3,
+        "questions": 3,
+        "hedging": 2,
+        "structure": 4,
+        "storytelling": 5,
+        "warmth": 4,
+        "persuasion": 4,
+        "spontaneity": 3
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses a steady conversational pace and an occasional question to open a point. Moves through ideas with explicit step-by-step progression, then lands on clear but balanced conclusions. The overall tone keeps warm, encouraging reassurance and favors story-to-insight turns over topic-specific detail."
+    },
+    {
+      "id": "ali-spagnola",
+      "name": "Ali Spagnola",
+      "role": "English essay creator",
+      "video_url": "https://www.youtube.com/@alispagnola",
+      "genre": "essay",
+      "source_note": "Reflective connections; layered context; considered conclusion.",
+      "style_profile": {
+        "directness": 4,
+        "rhythm": 5,
+        "questions": 2,
+        "hedging": 1,
+        "structure": 3,
+        "storytelling": 3,
+        "warmth": 4,
+        "persuasion": 3,
+        "spontaneity": 4
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses short, energetic beats and mostly statement-led framing. Moves through ideas with a visible beginning, comparison, and conclusion, then lands on direct conclusions and firm next steps. The overall tone keeps warm, encouraging reassurance and favors an occasional concrete scene over topic-specific detail."
+    },
+    {
+      "id": "bobby-fingers",
+      "name": "Bobby Fingers",
+      "role": "English story creator",
+      "video_url": "https://www.youtube.com/@bobbyfingers",
+      "genre": "story",
+      "source_note": "First-person momentum; vivid transitions; conversational pacing.",
+      "style_profile": {
+        "directness": 3,
+        "rhythm": 2,
+        "questions": 3,
+        "hedging": 2,
+        "structure": 4,
+        "storytelling": 4,
+        "warmth": 2,
+        "persuasion": 2,
+        "spontaneity": 3
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses a measured, connected pace and an occasional question to open a point. Moves through ideas with explicit step-by-step progression, then lands on clear but balanced conclusions. The overall tone keeps calm analytical distance and favors story-to-insight turns over topic-specific detail."
+    },
+    {
+      "id": "technology-connections",
+      "name": "Technology Connections",
+      "role": "English explainer creator",
+      "video_url": "https://www.youtube.com/@technologyconnections",
+      "genre": "explainer",
+      "source_note": "Clear sequencing; evidence-aware context; accessible explanation.",
+      "style_profile": {
+        "directness": 3,
+        "rhythm": 2,
+        "questions": 2,
+        "hedging": 3,
+        "structure": 5,
+        "storytelling": 2,
+        "warmth": 2,
+        "persuasion": 3,
+        "spontaneity": 3
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses a measured, connected pace and mostly statement-led framing. Moves through ideas with explicit step-by-step progression, then lands on clear but balanced conclusions. The overall tone keeps calm analytical distance and favors pattern-first explanation over topic-specific detail."
+    },
+    {
+      "id": "practical-engineering",
+      "name": "Practical Engineering",
+      "role": "English coach creator",
+      "video_url": "https://www.youtube.com/@practicalengineering",
+      "genre": "coach",
+      "source_note": "Practical next steps; direct encouragement; action-focused framing.",
+      "style_profile": {
+        "directness": 3,
+        "rhythm": 2,
+        "questions": 2,
+        "hedging": 3,
+        "structure": 5,
+        "storytelling": 2,
+        "warmth": 2,
+        "persuasion": 3,
+        "spontaneity": 1
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses a measured, connected pace and mostly statement-led framing. Moves through ideas with explicit step-by-step progression, then lands on clear but balanced conclusions. The overall tone keeps calm analytical distance and favors pattern-first explanation over topic-specific detail."
+    },
+    {
+      "id": "not-just-bikes",
+      "name": "Not Just Bikes",
+      "role": "English interview creator",
+      "video_url": "https://www.youtube.com/@notjustbikes",
+      "genre": "interview",
+      "source_note": "Open questions; attentive follow-up; reflective turn-taking.",
+      "style_profile": {
+        "directness": 4,
+        "rhythm": 3,
+        "questions": 2,
+        "hedging": 2,
+        "structure": 4,
+        "storytelling": 3,
+        "warmth": 2,
+        "persuasion": 4,
+        "spontaneity": 2
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses a steady conversational pace and mostly statement-led framing. Moves through ideas with explicit step-by-step progression, then lands on direct conclusions and firm next steps. The overall tone keeps calm analytical distance and favors an occasional concrete scene over topic-specific detail."
+    },
+    {
+      "id": "city-beautiful",
+      "name": "City Beautiful",
+      "role": "English review creator",
+      "video_url": "https://www.youtube.com/@citybeautiful",
+      "genre": "review",
+      "source_note": "Trade-off framing; concrete criteria; measured recommendation.",
+      "style_profile": {
+        "directness": 3,
+        "rhythm": 3,
+        "questions": 3,
+        "hedging": 2,
+        "structure": 5,
+        "storytelling": 3,
+        "warmth": 2,
+        "persuasion": 2,
+        "spontaneity": 2
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses a steady conversational pace and an occasional question to open a point. Moves through ideas with explicit step-by-step progression, then lands on clear but balanced conclusions. The overall tone keeps calm analytical distance and favors an occasional concrete scene over topic-specific detail."
+    },
+    {
+      "id": "half-as-interesting",
+      "name": "Half as Interesting",
+      "role": "English essay creator",
+      "video_url": "https://www.youtube.com/@halfasinteresting",
+      "genre": "essay",
+      "source_note": "Reflective connections; layered context; considered conclusion.",
+      "style_profile": {
+        "directness": 3,
+        "rhythm": 4,
+        "questions": 3,
+        "hedging": 2,
+        "structure": 3,
+        "storytelling": 2,
+        "warmth": 3,
+        "persuasion": 2,
+        "spontaneity": 3
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses short, energetic beats and an occasional question to open a point. Moves through ideas with a visible beginning, comparison, and conclusion, then lands on clear but balanced conclusions. The overall tone keeps practical reassurance and favors pattern-first explanation over topic-specific detail."
+    },
+    {
+      "id": "polyphonic",
+      "name": "Polyphonic",
+      "role": "English story creator",
+      "video_url": "https://www.youtube.com/@polyphonic",
+      "genre": "story",
+      "source_note": "First-person momentum; vivid transitions; conversational pacing.",
+      "style_profile": {
+        "directness": 3,
+        "rhythm": 4,
+        "questions": 3,
+        "hedging": 3,
+        "structure": 3,
+        "storytelling": 4,
+        "warmth": 3,
+        "persuasion": 2,
+        "spontaneity": 2
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses short, energetic beats and an occasional question to open a point. Moves through ideas with a visible beginning, comparison, and conclusion, then lands on clear but balanced conclusions. The overall tone keeps practical reassurance and favors story-to-insight turns over topic-specific detail."
+    },
+    {
+      "id": "rick-beato",
+      "name": "Rick Beato",
+      "role": "English explainer creator",
+      "video_url": "https://www.youtube.com/@rickbeato",
+      "genre": "explainer",
+      "source_note": "Clear sequencing; evidence-aware context; accessible explanation.",
+      "style_profile": {
+        "directness": 3,
+        "rhythm": 4,
+        "questions": 3,
+        "hedging": 3,
+        "structure": 3,
+        "storytelling": 2,
+        "warmth": 3,
+        "persuasion": 3,
+        "spontaneity": 4
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses short, energetic beats and an occasional question to open a point. Moves through ideas with a visible beginning, comparison, and conclusion, then lands on clear but balanced conclusions. The overall tone keeps practical reassurance and favors pattern-first explanation over topic-specific detail."
+    },
+    {
+      "id": "david-bennett-piano",
+      "name": "David Bennett Piano",
+      "role": "English coach creator",
+      "video_url": "https://www.youtube.com/@davidbennettpiano",
+      "genre": "coach",
+      "source_note": "Practical next steps; direct encouragement; action-focused framing.",
+      "style_profile": {
+        "directness": 3,
+        "rhythm": 3,
+        "questions": 3,
+        "hedging": 2,
+        "structure": 5,
+        "storytelling": 3,
+        "warmth": 4,
+        "persuasion": 2,
+        "spontaneity": 2
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses a steady conversational pace and an occasional question to open a point. Moves through ideas with explicit step-by-step progression, then lands on clear but balanced conclusions. The overall tone keeps warm, encouraging reassurance and favors an occasional concrete scene over topic-specific detail."
+    },
+    {
+      "id": "paul-davids",
+      "name": "Paul Davids",
+      "role": "English interview creator",
+      "video_url": "https://www.youtube.com/@pauldavids",
+      "genre": "interview",
+      "source_note": "Open questions; attentive follow-up; reflective turn-taking.",
+      "style_profile": {
+        "directness": 3,
+        "rhythm": 3,
+        "questions": 2,
+        "hedging": 2,
+        "structure": 4,
+        "storytelling": 3,
+        "warmth": 4,
+        "persuasion": 2,
+        "spontaneity": 3
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses a steady conversational pace and mostly statement-led framing. Moves through ideas with explicit step-by-step progression, then lands on clear but balanced conclusions. The overall tone keeps warm, encouraging reassurance and favors an occasional concrete scene over topic-specific detail."
+    },
+    {
+      "id": "sorelle-amore",
+      "name": "Sorelle Amore",
+      "role": "English review creator",
+      "video_url": "https://www.youtube.com/@sorelleamore",
+      "genre": "review",
+      "source_note": "Trade-off framing; concrete criteria; measured recommendation.",
+      "style_profile": {
+        "directness": 5,
+        "rhythm": 4,
+        "questions": 3,
+        "hedging": 1,
+        "structure": 4,
+        "storytelling": 3,
+        "warmth": 3,
+        "persuasion": 5,
+        "spontaneity": 3
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses short, energetic beats and an occasional question to open a point. Moves through ideas with explicit step-by-step progression, then lands on direct conclusions and firm next steps. The overall tone keeps practical reassurance and favors an occasional concrete scene over topic-specific detail."
+    },
+    {
+      "id": "peter-santenello",
+      "name": "Peter Santenello",
+      "role": "English essay creator",
+      "video_url": "https://www.youtube.com/@petersantenello",
+      "genre": "essay",
+      "source_note": "Reflective connections; layered context; considered conclusion.",
+      "style_profile": {
+        "directness": 2,
+        "rhythm": 2,
+        "questions": 4,
+        "hedging": 3,
+        "structure": 2,
+        "storytelling": 3,
+        "warmth": 3,
+        "persuasion": 2,
+        "spontaneity": 3
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses a measured, connected pace and frequent questions that guide the listener. Moves through ideas with a looser reflective build, then lands on careful and qualified conclusions. The overall tone keeps practical reassurance and favors an occasional concrete scene over topic-specific detail."
+    },
+    {
+      "id": "indigo-traveller",
+      "name": "Indigo Traveller",
+      "role": "English story creator",
+      "video_url": "https://www.youtube.com/@indigotraveller",
+      "genre": "story",
+      "source_note": "First-person momentum; vivid transitions; conversational pacing.",
+      "style_profile": {
+        "directness": 2,
+        "rhythm": 2,
+        "questions": 2,
+        "hedging": 3,
+        "structure": 3,
+        "storytelling": 4,
+        "warmth": 3,
+        "persuasion": 2,
+        "spontaneity": 2
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses a measured, connected pace and mostly statement-led framing. Moves through ideas with a visible beginning, comparison, and conclusion, then lands on careful and qualified conclusions. The overall tone keeps practical reassurance and favors story-to-insight turns over topic-specific detail."
+    },
+    {
+      "id": "mike-boyd",
+      "name": "Mike Boyd",
+      "role": "English explainer creator",
+      "video_url": "https://www.youtube.com/@mikeboyd",
+      "genre": "explainer",
+      "source_note": "Clear sequencing; evidence-aware context; accessible explanation.",
+      "style_profile": {
+        "directness": 3,
+        "rhythm": 2,
+        "questions": 2,
+        "hedging": 3,
+        "structure": 4,
+        "storytelling": 2,
+        "warmth": 3,
+        "persuasion": 3,
+        "spontaneity": 3
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses a measured, connected pace and mostly statement-led framing. Moves through ideas with explicit step-by-step progression, then lands on clear but balanced conclusions. The overall tone keeps practical reassurance and favors pattern-first explanation over topic-specific detail."
+    },
+    {
+      "id": "tina-yong",
+      "name": "Tina Yong",
+      "role": "English coach creator",
+      "video_url": "https://www.youtube.com/@tinayong",
+      "genre": "coach",
+      "source_note": "Practical next steps; direct encouragement; action-focused framing.",
+      "style_profile": {
+        "directness": 3,
+        "rhythm": 3,
+        "questions": 2,
+        "hedging": 2,
+        "structure": 4,
+        "storytelling": 3,
+        "warmth": 4,
+        "persuasion": 2,
+        "spontaneity": 3
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses a steady conversational pace and mostly statement-led framing. Moves through ideas with explicit step-by-step progression, then lands on clear but balanced conclusions. The overall tone keeps warm, encouraging reassurance and favors an occasional concrete scene over topic-specific detail."
+    },
+    {
+      "id": "jackie-aina",
+      "name": "Jackie Aina",
+      "role": "English interview creator",
+      "video_url": "https://www.youtube.com/@jackieaina",
+      "genre": "interview",
+      "source_note": "Open questions; attentive follow-up; reflective turn-taking.",
+      "style_profile": {
+        "directness": 3,
+        "rhythm": 4,
+        "questions": 3,
+        "hedging": 2,
+        "structure": 3,
+        "storytelling": 4,
+        "warmth": 3,
+        "persuasion": 2,
+        "spontaneity": 4
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses short, energetic beats and an occasional question to open a point. Moves through ideas with a visible beginning, comparison, and conclusion, then lands on clear but balanced conclusions. The overall tone keeps practical reassurance and favors story-to-insight turns over topic-specific detail."
+    },
+    {
+      "id": "nikkietutorials",
+      "name": "NikkieTutorials",
+      "role": "English review creator",
+      "video_url": "https://www.youtube.com/@nikkietutorials",
+      "genre": "review",
+      "source_note": "Trade-off framing; concrete criteria; measured recommendation.",
+      "style_profile": {
+        "directness": 3,
+        "rhythm": 4,
+        "questions": 2,
+        "hedging": 2,
+        "structure": 3,
+        "storytelling": 3,
+        "warmth": 4,
+        "persuasion": 2,
+        "spontaneity": 4
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses short, energetic beats and mostly statement-led framing. Moves through ideas with a visible beginning, comparison, and conclusion, then lands on clear but balanced conclusions. The overall tone keeps warm, encouraging reassurance and favors an occasional concrete scene over topic-specific detail."
+    },
+    {
+      "id": "hyram",
+      "name": "Hyram",
+      "role": "English essay creator",
+      "video_url": "https://www.youtube.com/@hyram",
+      "genre": "essay",
+      "source_note": "Reflective connections; layered context; considered conclusion.",
+      "style_profile": {
+        "directness": 5,
+        "rhythm": 4,
+        "questions": 3,
+        "hedging": 1,
+        "structure": 3,
+        "storytelling": 2,
+        "warmth": 4,
+        "persuasion": 4,
+        "spontaneity": 3
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses short, energetic beats and an occasional question to open a point. Moves through ideas with a visible beginning, comparison, and conclusion, then lands on direct conclusions and firm next steps. The overall tone keeps warm, encouraging reassurance and favors pattern-first explanation over topic-specific detail."
+    },
+    {
+      "id": "gabi-belle",
+      "name": "Gabi Belle",
+      "role": "English story creator",
+      "video_url": "https://www.youtube.com/@gabibelle",
+      "genre": "story",
+      "source_note": "First-person momentum; vivid transitions; conversational pacing.",
+      "style_profile": {
+        "directness": 2,
+        "rhythm": 4,
+        "questions": 3,
+        "hedging": 4,
+        "structure": 1,
+        "storytelling": 4,
+        "warmth": 3,
+        "persuasion": 1,
+        "spontaneity": 5
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses short, energetic beats and an occasional question to open a point. Moves through ideas with a looser reflective build, then lands on careful and qualified conclusions. The overall tone keeps practical reassurance and favors story-to-insight turns over topic-specific detail."
+    },
+    {
+      "id": "struthless",
+      "name": "struthless",
+      "role": "English explainer creator",
+      "video_url": "https://www.youtube.com/@struthless",
+      "genre": "explainer",
+      "source_note": "Clear sequencing; evidence-aware context; accessible explanation.",
+      "style_profile": {
+        "directness": 3,
+        "rhythm": 4,
+        "questions": 3,
+        "hedging": 2,
+        "structure": 4,
+        "storytelling": 4,
+        "warmth": 4,
+        "persuasion": 3,
+        "spontaneity": 4
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses short, energetic beats and an occasional question to open a point. Moves through ideas with explicit step-by-step progression, then lands on clear but balanced conclusions. The overall tone keeps warm, encouraging reassurance and favors story-to-insight turns over topic-specific detail."
+    },
+    {
+      "id": "rowena-tsai",
+      "name": "Rowena Tsai",
+      "role": "English coach creator",
+      "video_url": "https://www.youtube.com/@rowenatsai",
+      "genre": "coach",
+      "source_note": "Practical next steps; direct encouragement; action-focused framing.",
+      "style_profile": {
+        "directness": 2,
+        "rhythm": 2,
+        "questions": 3,
+        "hedging": 3,
+        "structure": 3,
+        "storytelling": 4,
+        "warmth": 4,
+        "persuasion": 2,
+        "spontaneity": 2
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses a measured, connected pace and an occasional question to open a point. Moves through ideas with a visible beginning, comparison, and conclusion, then lands on careful and qualified conclusions. The overall tone keeps warm, encouraging reassurance and favors story-to-insight turns over topic-specific detail."
+    },
+    {
+      "id": "better-ideas",
+      "name": "Better Ideas",
+      "role": "English interview creator",
+      "video_url": "https://www.youtube.com/@betterideas",
+      "genre": "interview",
+      "source_note": "Open questions; attentive follow-up; reflective turn-taking.",
+      "style_profile": {
+        "directness": 3,
+        "rhythm": 3,
+        "questions": 3,
+        "hedging": 2,
+        "structure": 4,
+        "storytelling": 4,
+        "warmth": 4,
+        "persuasion": 3,
+        "spontaneity": 3
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses a steady conversational pace and an occasional question to open a point. Moves through ideas with explicit step-by-step progression, then lands on clear but balanced conclusions. The overall tone keeps warm, encouraging reassurance and favors story-to-insight turns over topic-specific detail."
+    },
+    {
+      "id": "hannah-fry",
+      "name": "Hannah Fry",
+      "role": "English review creator",
+      "video_url": "https://www.youtube.com/@hannahfry",
+      "genre": "review",
+      "source_note": "Trade-off framing; concrete criteria; measured recommendation.",
+      "style_profile": {
+        "directness": 3,
+        "rhythm": 3,
+        "questions": 3,
+        "hedging": 2,
+        "structure": 4,
+        "storytelling": 3,
+        "warmth": 3,
+        "persuasion": 2,
+        "spontaneity": 2
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses a steady conversational pace and an occasional question to open a point. Moves through ideas with explicit step-by-step progression, then lands on clear but balanced conclusions. The overall tone keeps practical reassurance and favors an occasional concrete scene over topic-specific detail."
+    },
+    {
+      "id": "3blue1brown",
+      "name": "3Blue1Brown",
+      "role": "English essay creator",
+      "video_url": "https://www.youtube.com/@3blue1brown",
+      "genre": "essay",
+      "source_note": "Reflective connections; layered context; considered conclusion.",
+      "style_profile": {
+        "directness": 3,
+        "rhythm": 2,
+        "questions": 3,
+        "hedging": 3,
+        "structure": 5,
+        "storytelling": 2,
+        "warmth": 2,
+        "persuasion": 3,
+        "spontaneity": 1
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses a measured, connected pace and an occasional question to open a point. Moves through ideas with explicit step-by-step progression, then lands on clear but balanced conclusions. The overall tone keeps calm analytical distance and favors pattern-first explanation over topic-specific detail."
+    },
+    {
+      "id": "crash-course",
+      "name": "Crash Course",
+      "role": "English story creator",
+      "video_url": "https://www.youtube.com/@crashcourse",
+      "genre": "story",
+      "source_note": "First-person momentum; vivid transitions; conversational pacing.",
+      "style_profile": {
+        "directness": 3,
+        "rhythm": 4,
+        "questions": 3,
+        "hedging": 2,
+        "structure": 5,
+        "storytelling": 3,
+        "warmth": 3,
+        "persuasion": 2,
+        "spontaneity": 2
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses short, energetic beats and an occasional question to open a point. Moves through ideas with explicit step-by-step progression, then lands on clear but balanced conclusions. The overall tone keeps practical reassurance and favors an occasional concrete scene over topic-specific detail."
+    },
+    {
+      "id": "katie-morton",
+      "name": "Katie Morton",
+      "role": "English explainer creator",
+      "video_url": "https://www.youtube.com/@katiemorton",
+      "genre": "explainer",
+      "source_note": "Clear sequencing; evidence-aware context; accessible explanation.",
+      "style_profile": {
+        "directness": 2,
+        "rhythm": 2,
+        "questions": 3,
+        "hedging": 3,
+        "structure": 4,
+        "storytelling": 4,
+        "warmth": 4,
+        "persuasion": 2,
+        "spontaneity": 2
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses a measured, connected pace and an occasional question to open a point. Moves through ideas with explicit step-by-step progression, then lands on careful and qualified conclusions. The overall tone keeps warm, encouraging reassurance and favors story-to-insight turns over topic-specific detail."
+    },
+    {
+      "id": "lavendaire",
+      "name": "Lavendaire",
+      "role": "English coach creator",
+      "video_url": "https://www.youtube.com/@lavendaire",
+      "genre": "coach",
+      "source_note": "Practical next steps; direct encouragement; action-focused framing.",
+      "style_profile": {
+        "directness": 2,
+        "rhythm": 2,
+        "questions": 3,
+        "hedging": 3,
+        "structure": 3,
+        "storytelling": 4,
+        "warmth": 4,
+        "persuasion": 2,
+        "spontaneity": 2
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses a measured, connected pace and an occasional question to open a point. Moves through ideas with a visible beginning, comparison, and conclusion, then lands on careful and qualified conclusions. The overall tone keeps warm, encouraging reassurance and favors story-to-insight turns over topic-specific detail."
+    },
+    {
+      "id": "maangchi",
+      "name": "Maangchi",
+      "role": "English interview creator",
+      "video_url": "https://www.youtube.com/@maangchi",
+      "genre": "interview",
+      "source_note": "Open questions; attentive follow-up; reflective turn-taking.",
+      "style_profile": {
+        "directness": 3,
+        "rhythm": 3,
+        "questions": 2,
+        "hedging": 2,
+        "structure": 4,
+        "storytelling": 3,
+        "warmth": 5,
+        "persuasion": 2,
+        "spontaneity": 4
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses a steady conversational pace and mostly statement-led framing. Moves through ideas with explicit step-by-step progression, then lands on clear but balanced conclusions. The overall tone keeps warm, encouraging reassurance and favors an occasional concrete scene over topic-specific detail."
+    },
+    {
+      "id": "anthony-padilla",
+      "name": "Anthony Padilla",
+      "role": "English review creator",
+      "video_url": "https://www.youtube.com/@anthonypadilla",
+      "genre": "review",
+      "source_note": "Trade-off framing; concrete criteria; measured recommendation.",
+      "style_profile": {
+        "directness": 2,
+        "rhythm": 3,
+        "questions": 4,
+        "hedging": 3,
+        "structure": 3,
+        "storytelling": 3,
+        "warmth": 3,
+        "persuasion": 2,
+        "spontaneity": 3
+      },
+      "review": {
+        "author": "ai-draft",
+        "reviewer": "builder-review",
+        "observed_on": "2026-07-20",
+        "status": "candidate"
+      },
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "verification": "candidate",
+      "style_descriptor_long": "Uses a steady conversational pace and frequent questions that guide the listener. Moves through ideas with a visible beginning, comparison, and conclusion, then lands on careful and qualified conclusions. The overall tone keeps practical reassurance and favors an occasional concrete scene over topic-specific detail."
+    },
+    {
+      "id": "jeff-su",
+      "name": "Jeff Su",
+      "video_url": "https://www.youtube.com/@JeffSu",
+      "genre": "explainer",
+      "role": "crisp step-by-step productivity, tight and structured",
+      "source_note": "crisp step-by-step productivity, tight and structured",
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "style_profile": {
+        "directness": 4,
+        "rhythm": 4,
+        "questions": 2,
+        "hedging": 2,
+        "structure": 5,
+        "storytelling": 2,
+        "warmth": 3,
+        "persuasion": 3,
+        "spontaneity": 2
+      },
+      "verification": "human_verified",
+      "review": {
+        "author": "sumin",
+        "reviewer": "sumin",
+        "observed_on": "2026-07-20",
+        "status": "verified",
+        "basis": "personal subscription / direct viewing"
+      },
+      "style_descriptor_long": "Uses short, energetic beats and mostly statement-led framing. Moves through ideas with explicit step-by-step progression, then lands on direct conclusions and firm next steps. The overall tone keeps practical reassurance and favors pattern-first explanation over topic-specific detail."
+    },
+    {
+      "id": "mark-manson",
+      "name": "Mark Manson",
+      "video_url": "https://www.youtube.com/@IAmMarkManson",
+      "genre": "essay",
+      "role": "blunt, irreverent self-help built on stories + arguments",
+      "source_note": "blunt, irreverent self-help built on stories + arguments",
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "style_profile": {
+        "directness": 5,
+        "rhythm": 3,
+        "questions": 3,
+        "hedging": 2,
+        "structure": 3,
+        "storytelling": 4,
+        "warmth": 3,
+        "persuasion": 4,
+        "spontaneity": 3
+      },
+      "verification": "human_verified",
+      "review": {
+        "author": "sumin",
+        "reviewer": "sumin",
+        "observed_on": "2026-07-20",
+        "status": "verified",
+        "basis": "personal subscription / direct viewing"
+      },
+      "style_descriptor_long": "Uses a steady conversational pace and an occasional question to open a point. Moves through ideas with a visible beginning, comparison, and conclusion, then lands on direct conclusions and firm next steps. The overall tone keeps practical reassurance and favors story-to-insight turns over topic-specific detail."
+    },
+    {
+      "id": "nick-bare",
+      "name": "Nick Bare",
+      "video_url": "https://www.youtube.com/@nickbarefitness",
+      "genre": "story",
+      "role": "high-energy discipline vlog, motivational 'go one more'",
+      "source_note": "high-energy discipline vlog, motivational 'go one more'",
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "style_profile": {
+        "directness": 4,
+        "rhythm": 4,
+        "questions": 2,
+        "hedging": 1,
+        "structure": 3,
+        "storytelling": 4,
+        "warmth": 3,
+        "persuasion": 5,
+        "spontaneity": 3
+      },
+      "verification": "human_verified",
+      "review": {
+        "author": "sumin",
+        "reviewer": "sumin",
+        "observed_on": "2026-07-20",
+        "status": "verified",
+        "basis": "personal subscription / direct viewing"
+      },
+      "style_descriptor_long": "Uses short, energetic beats and mostly statement-led framing. Moves through ideas with a visible beginning, comparison, and conclusion, then lands on direct conclusions and firm next steps. The overall tone keeps practical reassurance and favors story-to-insight turns over topic-specific detail."
+    },
+    {
+      "id": "amy-landino",
+      "name": "Amy Landino",
+      "video_url": "https://www.youtube.com/@AmyTV",
+      "genre": "coach",
+      "role": "direct, no-nonsense productivity coach",
+      "source_note": "direct, no-nonsense productivity coach",
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "style_profile": {
+        "directness": 5,
+        "rhythm": 4,
+        "questions": 3,
+        "hedging": 1,
+        "structure": 4,
+        "storytelling": 2,
+        "warmth": 3,
+        "persuasion": 4,
+        "spontaneity": 2
+      },
+      "verification": "human_verified",
+      "review": {
+        "author": "sumin",
+        "reviewer": "sumin",
+        "observed_on": "2026-07-20",
+        "status": "verified",
+        "basis": "personal subscription / direct viewing"
+      },
+      "style_descriptor_long": "Uses short, energetic beats and an occasional question to open a point. Moves through ideas with explicit step-by-step progression, then lands on direct conclusions and firm next steps. The overall tone keeps practical reassurance and favors pattern-first explanation over topic-specific detail."
+    },
+    {
+      "id": "elliot-choy",
+      "name": "Elliot Choy",
+      "video_url": "https://www.youtube.com/@ELLIOTCHOY",
+      "genre": "essay",
+      "role": "warm, chill, conversational reflection",
+      "source_note": "warm, chill, conversational reflection",
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "style_profile": {
+        "directness": 2,
+        "rhythm": 3,
+        "questions": 3,
+        "hedging": 3,
+        "structure": 2,
+        "storytelling": 4,
+        "warmth": 4,
+        "persuasion": 2,
+        "spontaneity": 3
+      },
+      "verification": "human_verified",
+      "review": {
+        "author": "sumin",
+        "reviewer": "sumin",
+        "observed_on": "2026-07-20",
+        "status": "verified",
+        "basis": "personal subscription / direct viewing"
+      },
+      "style_descriptor_long": "Uses a steady conversational pace and an occasional question to open a point. Moves through ideas with a looser reflective build, then lands on careful and qualified conclusions. The overall tone keeps warm, encouraging reassurance and favors story-to-insight turns over topic-specific detail."
+    },
+    {
+      "id": "lana-blakely",
+      "name": "Lana Blakely",
+      "video_url": "https://www.youtube.com/@lanablakely",
+      "genre": "essay",
+      "role": "introspective, calm, question-led essays on self",
+      "source_note": "introspective, calm, question-led essays on self",
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "style_profile": {
+        "directness": 2,
+        "rhythm": 2,
+        "questions": 4,
+        "hedging": 4,
+        "structure": 3,
+        "storytelling": 3,
+        "warmth": 3,
+        "persuasion": 2,
+        "spontaneity": 2
+      },
+      "verification": "human_verified",
+      "review": {
+        "author": "sumin",
+        "reviewer": "sumin",
+        "observed_on": "2026-07-20",
+        "status": "verified",
+        "basis": "personal subscription / direct viewing"
+      },
+      "style_descriptor_long": "Uses a measured, connected pace and frequent questions that guide the listener. Moves through ideas with a visible beginning, comparison, and conclusion, then lands on careful and qualified conclusions. The overall tone keeps practical reassurance and favors an occasional concrete scene over topic-specific detail."
+    },
+    {
+      "id": "oversimplified",
+      "name": "OverSimplified",
+      "video_url": "https://www.youtube.com/@OverSimplified",
+      "genre": "story",
+      "role": "comedic animated history, deadpan, story-driven",
+      "source_note": "comedic animated history, deadpan, story-driven",
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "style_profile": {
+        "directness": 3,
+        "rhythm": 4,
+        "questions": 2,
+        "hedging": 2,
+        "structure": 4,
+        "storytelling": 5,
+        "warmth": 2,
+        "persuasion": 2,
+        "spontaneity": 4
+      },
+      "verification": "human_verified",
+      "review": {
+        "author": "sumin",
+        "reviewer": "sumin",
+        "observed_on": "2026-07-20",
+        "status": "verified",
+        "basis": "personal subscription / direct viewing"
+      },
+      "style_descriptor_long": "Uses short, energetic beats and mostly statement-led framing. Moves through ideas with explicit step-by-step progression, then lands on clear but balanced conclusions. The overall tone keeps calm analytical distance and favors story-to-insight turns over topic-specific detail."
+    },
+    {
+      "id": "better-than-yesterday",
+      "name": "Better Than Yesterday",
+      "video_url": "https://www.youtube.com/channel/UCHE8wtL7tgbvYDHAJTKYrzg",
+      "genre": "explainer",
+      "role": "calm whiteboard self-improvement, structured, action-oriented",
+      "source_note": "calm whiteboard self-improvement, structured, action-oriented",
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "style_profile": {
+        "directness": 3,
+        "rhythm": 3,
+        "questions": 3,
+        "hedging": 2,
+        "structure": 5,
+        "storytelling": 3,
+        "warmth": 3,
+        "persuasion": 4,
+        "spontaneity": 1
+      },
+      "verification": "human_verified",
+      "review": {
+        "author": "sumin",
+        "reviewer": "sumin",
+        "observed_on": "2026-07-20",
+        "status": "verified",
+        "basis": "personal subscription / direct viewing"
+      },
+      "style_descriptor_long": "Uses a steady conversational pace and an occasional question to open a point. Moves through ideas with explicit step-by-step progression, then lands on clear but balanced conclusions. The overall tone keeps practical reassurance and favors an occasional concrete scene over topic-specific detail."
+    },
+    {
+      "id": "einzelganger",
+      "name": "Einzelganger",
+      "video_url": "https://www.youtube.com/@Einzelg%C3%A4nger",
+      "genre": "essay",
+      "role": "slow, nuanced philosophy essays, calm distance",
+      "source_note": "slow, nuanced philosophy essays, calm distance",
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "style_profile": {
+        "directness": 2,
+        "rhythm": 2,
+        "questions": 3,
+        "hedging": 4,
+        "structure": 4,
+        "storytelling": 3,
+        "warmth": 2,
+        "persuasion": 2,
+        "spontaneity": 1
+      },
+      "verification": "human_verified",
+      "review": {
+        "author": "sumin",
+        "reviewer": "sumin",
+        "observed_on": "2026-07-20",
+        "status": "verified",
+        "basis": "personal subscription / direct viewing"
+      },
+      "style_descriptor_long": "Uses a measured, connected pace and an occasional question to open a point. Moves through ideas with explicit step-by-step progression, then lands on careful and qualified conclusions. The overall tone keeps calm analytical distance and favors an occasional concrete scene over topic-specific detail."
+    },
+    {
+      "id": "gawx-art",
+      "name": "Gawx Art",
+      "video_url": "https://www.youtube.com/@gawxart",
+      "genre": "story",
+      "role": "energetic, playful creative vlog, spontaneous",
+      "source_note": "energetic, playful creative vlog, spontaneous",
+      "target_type": "youtube_creator",
+      "political_office_holder": false,
+      "style_profile": {
+        "directness": 3,
+        "rhythm": 5,
+        "questions": 3,
+        "hedging": 2,
+        "structure": 2,
+        "storytelling": 4,
+        "warmth": 4,
+        "persuasion": 3,
+        "spontaneity": 5
+      },
+      "verification": "human_verified",
+      "review": {
+        "author": "sumin",
+        "reviewer": "sumin",
+        "observed_on": "2026-07-20",
+        "status": "verified",
+        "basis": "personal subscription / direct viewing"
+      },
+      "style_descriptor_long": "Uses short, energetic beats and an occasional question to open a point. Moves through ideas with a looser reflective build, then lands on clear but balanced conclusions. The overall tone keeps warm, encouraging reassurance and favors story-to-insight turns over topic-specific detail."
+    }
+  ],
+  "eligibility": {
+    "allowed_target_types": [
+      "youtube_creator",
+      "creator_host",
+      "celebrity_creator"
+    ],
+    "excluded_target_types": [
+      "politician",
+      "head_of_state",
+      "elected_official"
+    ]
+  },
+  "known_limitations": [
+    "9-axis rubric only; humor / wit is intentionally NOT measured.",
+    "The 130 candidate scores are AI-drafted from known public style, reviewed by the builder — not independently human-verified."
+  ]
+}

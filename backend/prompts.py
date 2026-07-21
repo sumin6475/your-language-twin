@@ -1,43 +1,14 @@
-"""GPT-5.6 prompts. They preserve rhetorical style; they do not assess voice quality."""
+"""Prompts for the three intentionally separate GPT-5.6 calls."""
 
 from __future__ import annotations
 
 import json
 
-
-FINGERPRINT_SYSTEM = """You are a sociolinguist. Analyze HOW a person speaks, not what they say.
-The input is a spontaneous native-language monologue. Return JSON only with these keys:
-filler_density, disfluency_type, hedging, sentence_rhythm, mood, directness,
-persuasion_move, self_reference_stance, register_note.
-
-Never correct, improve, or judge the speaker. Calibrate fillers for the equivalent English
-speaker: routine Korean particles are not automatically English fillers."""
+STYLE_SYSTEM = """Read only the English learner transcript. Return JSON with thinking_traits (at least 3), learning_traits, learner_quotes, and style_summary. Every trait needs a real sentence id. Describe how they organize ideas, hedge, question, persuade, or learn. Do not discuss voice, accent, identity, or the topic."""
+EVIDENCE_SYSTEM = """Return JSON {why_panels:[...]}. For every supplied creator, make 2 or 3 grounded evidence items. Use only supplied learner quotes and creator descriptors. Never invent a creator quote or fact. match_reason must be plain English, concise, and explain a pattern rather than a topic."""
+JUDGE_SYSTEM = """Return JSON {verified_panels, overall_confidence, judge_skipped:false}. Independently verify each evidence item using only the cited learner sentences. Mark unsupported or generic items dropped. Give every panel strong, clear, or partial resemblance. Do not generate new reasons."""
+TIEBREAK_SYSTEM = """You compare how people talk. Given a learner's English sample and short descriptions of several creators who scored nearly equal on a style match, pick and rank the 3 whose WAY OF TALKING best fits the learner: sentence structure, pacing, questioning, directness, and warmth. Use only the descriptions provided. Return JSON {ranked_ids:[...3], reasons:[...3]}. Each reason must be one plain sentence. Do not mention vectors, embeddings, or scores."""
 
 
-TRANSLATION_SYSTEM = """You translate spontaneous native-language speech into English for a
-style-analysis model. Preserve meaning AND the speaker's rhetorical fingerprint. Do not make
-the result polished or generic. Preserve genuine hedges, sentence rhythm, rhetorical moves,
-false starts, and roughness when present; never invent them. Return JSON only:
-{"translation":"..."}."""
-
-
-WHY_SYSTEM = """You explain a language-learning style recommendation. Given a learner's
-rhetorical fingerprint and one English creator profile, write exactly one warm, specific
-sentence (maximum 35 words) explaining how their sentence rhythm, hedging, directness, or
-persuasion pattern align. Do not claim voice, accent, identity, or objective scientific proof."""
-
-
-def fingerprint_input(native_transcript: str) -> str:
-    return native_transcript
-
-
-def translation_input(native_transcript: str, fingerprint: dict[str, object]) -> str:
-    return json.dumps(
-        {"fingerprint": fingerprint, "transcript": native_transcript}, ensure_ascii=False
-    )
-
-
-def why_input(fingerprint: dict[str, object], creator: dict[str, str]) -> str:
-    return json.dumps(
-        {"learner_fingerprint": fingerprint, "creator": creator}, ensure_ascii=False
-    )
+def json_input(**payload: object) -> str:
+    return json.dumps(payload, ensure_ascii=False)
