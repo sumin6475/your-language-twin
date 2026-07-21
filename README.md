@@ -26,7 +26,7 @@ Every match comes with a checkable **evidence chain** (_You said → Creator doe
 
 | | |
 |---|---|
-| 🎬 **Demo video (< 3 min)** | `[YouTube link — add before submitting]` |
+| 🎬 **Demo video (< 3 min)** | [Watch on YouTube](https://youtu.be/Pq7AprAbbNg) |
 | 🧩 **Codex `/feedback` session ID** | `019f805c-97be-7b12-afab-bc1222712961` |
 | 🏷️ **Category** | Education |
 | 💻 **Setup** | Runs fully locally — no deployment, no account, and **no API keys needed to see a full demo** |
