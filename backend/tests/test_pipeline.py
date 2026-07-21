@@ -6,7 +6,7 @@ import json
 import numpy as np
 
 from backend.demo_cache import DemoResultCache
-from backend.models import Creator, CreatorMatch, PipelineResponse, Sentence, TranscriptResult
+from backend.models import Creator, CreatorMatch, PipelineResponse, Sentence, StyleReading, TranscriptResult
 from backend.pipeline import MatchPipeline
 
 
@@ -25,7 +25,7 @@ def test_pipeline_runs_fixed_graph_and_keeps_only_grounded_evidence(monkeypatch)
         calls.append(system.split()[0])
         if "Read only" in system:
             return json.dumps({"thinking_traits": [{"trait_id": "careful", "label": "Careful", "evidence_sentence_id": "s1", "confidence": .9}] * 3, "learning_traits": [], "learner_quotes": [{"sentence_id": "s1", "text": "I think we should look at this carefully before deciding."}], "style_summary": "Careful."})
-        if "Return JSON {why_panels" in system:
+        if "Fill the supplied response schema for every creator" in system:
             payload = json.loads(user)
             return json.dumps({"why_panels": [{"creator_id": m["creator_id"], "resemblance": "partial", "learner_trait_chips": ["Careful"], "evidence": [{"trait_id": "careful", "you_quote": {"sentence_id": "s1", "text": "I think we should look at this carefully before deciding."}, "creator_descriptor": m["descriptors"][0], "match_reason": "You both consider the evidence before reaching a conclusion."}, {"trait_id": "careful", "you_quote": {"sentence_id": "s1", "text": "I think we should look at this carefully before deciding."}, "creator_descriptor": m["descriptors"][0], "match_reason": "You both leave room to think before deciding."}]} for m in payload["matches"]]})
         payload = json.loads(user)
@@ -39,6 +39,8 @@ def test_pipeline_runs_fixed_graph_and_keeps_only_grounded_evidence(monkeypatch)
     assert [item.step for item in response.step_trace if item.status == "started"] == ["transcript", "style_reader", "matcher", "memory", "evidence_writer", "confidence_judge"]
     assert len(calls) == 3
     assert response.matches[0].evidence
+    assert response.analysis_complete is True
+    assert response.degraded_reason is None
     assert response.tiebreak_skipped is True
 
 
@@ -49,6 +51,8 @@ def test_short_transcript_stops_before_gpt(monkeypatch) -> None:
     response = asyncio.run(pipeline.run_pipeline(b"private audio", "sample.m4a"))
     assert response.matches == []
     assert response.message == "Please talk a little longer, about a minute or two."
+    assert response.analysis_complete is False
+    assert response.degraded_reason == "input"
 
 
 def test_demo_cache_returns_only_an_allowlisted_audio_result() -> None:
@@ -69,7 +73,10 @@ def test_generic_and_timeout_fallbacks_never_return_more_than_three_cards(monkey
         for index in range(6)
     ]
     pipeline = object.__new__(MatchPipeline)
-    assert len(pipeline._generic_response(matches, [], False).matches) == 3
+    generic = pipeline._generic_response(matches, [], False, degraded_reason="style")
+    assert len(generic.matches) == 3
+    assert generic.analysis_complete is False
+    assert generic.degraded_reason == "style"
 
     async def times_out(*_args):
         raise asyncio.TimeoutError
@@ -79,6 +86,8 @@ def test_generic_and_timeout_fallbacks_never_return_more_than_three_cards(monkey
     response = asyncio.run(pipeline.run_pipeline(b"audio", "sample.m4a"))
     assert len(response.matches) == 3
     assert response.message == "We are showing the clearest overlap we found."
+    assert response.analysis_complete is False
+    assert response.degraded_reason == "timeout"
 
 
 def test_embedding_model_is_loaded_once_and_reused(monkeypatch) -> None:
@@ -111,4 +120,26 @@ def test_tiebreaker_reorders_only_the_six_centered_candidates(monkeypatch) -> No
     candidates = pipeline._matcher("sample")
     ranked = asyncio.run(pipeline._tiebreak(TranscriptResult(transcript_en="A learner sample with enough words.", sentences=[Sentence(id="s1", text="A learner sample.")], word_count=120), candidates))
     assert [match.creator_id for match in ranked] == ["2", "1", "0"]
-    assert calls[0][2] == 300
+    assert calls[0][2] == 800
+
+
+def test_live_llm_path_uses_pydantic_structured_output(monkeypatch) -> None:
+    monkeypatch.setattr("backend.pipeline.load_creators", lambda: [])
+    monkeypatch.setattr("backend.pipeline.load_vectors", lambda: ([], np.empty((0, 3)), np.zeros(3, dtype=np.float32)))
+    pipeline = MatchPipeline(translate=lambda *_: "", embed=lambda _: np.ones(3))
+    expected = StyleReading.model_validate({
+        "thinking_traits": [{"trait_id": "careful", "label": "Careful", "evidence_sentence_id": "s1", "confidence": 0.9}] * 3,
+        "learning_traits": [],
+        "learner_quotes": [{"sentence_id": "s1", "text": "I think carefully."}],
+        "style_summary": "Careful and clear.",
+    })
+    calls = []
+
+    def parsed(schema, system, user, max_tokens):
+        calls.append((schema, system, user, max_tokens))
+        return expected
+
+    monkeypatch.setattr(pipeline, "_gpt56_parsed", parsed)
+    result = asyncio.run(pipeline._ask(StyleReading, "system", "user", 2500, request_id="test-request", stage="style_reader"))
+    assert result == expected
+    assert calls == [(StyleReading, "system", "user", 2500)]

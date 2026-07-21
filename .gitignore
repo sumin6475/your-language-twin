@@ -30,3 +30,6 @@ node_modules/
 
 # OS
 .DS_Store
+
+# Demo sample — own consented recording, safe to share for judging
+!samples/kor_3min_demo.m4a

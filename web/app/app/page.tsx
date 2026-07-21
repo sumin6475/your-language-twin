@@ -1,6 +1,6 @@
 "use client";
 
-import { ChangeEvent, FormEvent, useEffect, useState } from "react";
+import { ChangeEvent, FormEvent, useCallback, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 
 import { Check, Header, LivePill } from "@/components/ui";
@@ -8,13 +8,13 @@ import { ProcessingVisualizer } from "@/components/ProcessingVisualizer";
 import { RESULT_STORAGE_KEY, type MatchResponse } from "@/lib/matches";
 
 const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL ?? "http://127.0.0.1:8000";
-const MIN_PROCESSING_MS = 5200;
-
 export default function AppFlowPage() {
   const router = useRouter();
   const [audio, setAudio] = useState<File | null>(null);
   const [consent, setConsent] = useState(false);
   const [processing, setProcessing] = useState(false);
+  const [backendReady, setBackendReady] = useState(false);
+  const [matchResult, setMatchResult] = useState<MatchResponse | null>(null);
   const [error, setError] = useState("");
 
   useEffect(() => {
@@ -32,10 +32,11 @@ export default function AppFlowPage() {
       setError("Choose an audio file and confirm consent before continuing.");
       return;
     }
-    const startedAt = Date.now();
     const formData = new FormData();
     formData.append("audio", audio);
     setProcessing(true);
+    setBackendReady(false);
+    setMatchResult(null);
     setError("");
     try {
       const response = await fetch(`${BACKEND_URL}/match`, { method: "POST", body: formData });
@@ -43,22 +44,25 @@ export default function AppFlowPage() {
       if (!response.ok) throw new Error("detail" in payload ? payload.detail : "The match could not be completed. Please try again.");
       if (!("matches" in payload) || payload.matches.length !== 3)
         throw new Error("message" in payload && payload.message ? payload.message : "The match could not be completed. Please try again.");
-      await new Promise((resolve) => window.setTimeout(resolve, Math.max(0, MIN_PROCESSING_MS - (Date.now() - startedAt))));
-      sessionStorage.setItem(RESULT_STORAGE_KEY, JSON.stringify(payload));
-      router.push("/app/results");
+      setMatchResult(payload);
+      setBackendReady(true);
     } catch (caught) {
-      const remaining = MIN_PROCESSING_MS - (Date.now() - startedAt);
-      if (remaining > 0) await new Promise((resolve) => window.setTimeout(resolve, remaining));
       setError(caught instanceof Error ? caught.message : "The match could not be completed. Please try again.");
       setProcessing(false);
     }
   }
 
+  const finishProcessing = useCallback(() => {
+    if (!matchResult) return;
+    sessionStorage.setItem(RESULT_STORAGE_KEY, JSON.stringify(matchResult));
+    router.push("/app/results");
+  }, [matchResult, router]);
+
   return (
     <main className="lrm-page">
       <Header variant="app" />
       {processing ? (
-        <ProcessingVisualizer />
+        <ProcessingVisualizer backendReady={backendReady} onFinished={finishProcessing} />
       ) : (
         <div style={{ maxWidth: 560, margin: "0 auto", padding: "56px 24px 80px" }}>
           <div style={{ textAlign: "center", marginBottom: 32 }}>

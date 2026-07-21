@@ -1,0 +1,217 @@
+{
+  "entries": [
+    {
+      "audio_sha256": "7f8cace1f69efcdcefc0ca862f6a502999d40817a25f883416cc450a4a1ab26f",
+      "response": {
+        "matches": [
+          {
+            "creator_id": "cinema-therapy",
+            "name": "Cinema Therapy",
+            "role": "English essay creator",
+            "video_url": "https://www.youtube.com/@cinematherapy",
+            "similarity": 0.22676421701908112,
+            "resemblance": "clear",
+            "trait_chips": [
+              "step-by-step",
+              "direct",
+              "reflective"
+            ],
+            "evidence": [
+              {
+                "trait_id": "step-by-step",
+                "you_quote": {
+                  "sentence_id": "s4",
+                  "text": "So I brainstormed it and collected ideas every day, experimented, and feedbacked."
+                },
+                "creator_descriptor": "clear step-by-step structure",
+                "match_reason": "You present the work as a sequence of actions."
+              },
+              {
+                "trait_id": "direct",
+                "you_quote": {
+                  "sentence_id": "s10",
+                  "text": "So I thinking of implementing it with Notion right now The key idea is that if I think of an idea on the way I throw it to the agent when you think of an idea on the way and then classify it according to the workflow that has already been created So, there may be various projects going on, and you put it in the right place."
+                },
+                "creator_descriptor": "statement-led explanation",
+                "match_reason": "You state the key idea, then explain how it works."
+              },
+              {
+                "trait_id": "step-by-step",
+                "you_quote": {
+                  "sentence_id": "s16",
+                  "text": "So, based on the fact that it will be fully explained, at the end, I'm going to make a short tutorial on how to make it short, and what kind of workflow it is."
+                },
+                "creator_descriptor": "story-to-insight transitions",
+                "match_reason": "You move from the broader explanation toward a practical takeaway."
+              }
+            ],
+            "why": "You present the work as a sequence of actions."
+          },
+          {
+            "creator_id": "jay-shetty",
+            "name": "Jay Shetty",
+            "role": "warm, reflective story-to-lesson host",
+            "video_url": "https://www.youtube.com/@JayShetty",
+            "similarity": 0.22676421701908112,
+            "resemblance": "clear",
+            "trait_chips": [
+              "reflective",
+              "step-by-step",
+              "direct"
+            ],
+            "evidence": [
+              {
+                "trait_id": "direct",
+                "you_quote": {
+                  "sentence_id": "s10",
+                  "text": "So I thinking of implementing it with Notion right now The key idea is that if I think of an idea on the way I throw it to the agent when you think of an idea on the way and then classify it according to the workflow that has already been created So, there may be various projects going on, and you put it in the right place."
+                },
+                "creator_descriptor": "statement-led explanation",
+                "match_reason": "You introduce the main point directly before expanding it."
+              },
+              {
+                "trait_id": "step-by-step",
+                "you_quote": {
+                  "sentence_id": "s16",
+                  "text": "So, based on the fact that it will be fully explained, at the end, I'm going to make a short tutorial on how to make it short, and what kind of workflow it is."
+                },
+                "creator_descriptor": "clear step-by-step structure",
+                "match_reason": "You organize the teaching around explanation followed by a tutorial."
+              }
+            ],
+            "why": "You introduce the main point directly before expanding it."
+          },
+          {
+            "creator_id": "leila-hormozi",
+            "name": "Leila Hormozi",
+            "role": "English essay creator",
+            "video_url": "https://www.youtube.com/@leilahormozi",
+            "similarity": 0.2500142455101013,
+            "resemblance": "clear",
+            "trait_chips": [
+              "direct",
+              "step-by-step",
+              "reflective"
+            ],
+            "evidence": [
+              {
+                "trait_id": "direct",
+                "you_quote": {
+                  "sentence_id": "s10",
+                  "text": "So I thinking of implementing it with Notion right now The key idea is that if I think of an idea on the way I throw it to the agent when you think of an idea on the way and then classify it according to the workflow that has already been created So, there may be various projects going on, and you put it in the right place."
+                },
+                "creator_descriptor": "direct conclusions",
+                "match_reason": "You announce the key idea and give its practical result."
+              },
+              {
+                "trait_id": "step-by-step",
+                "you_quote": {
+                  "sentence_id": "s4",
+                  "text": "So I brainstormed it and collected ideas every day, experimented, and feedbacked."
+                },
+                "creator_descriptor": "clear step-by-step structure",
+                "match_reason": "You describe progress through a compact chain of actions."
+              },
+              {
+                "trait_id": "step-by-step",
+                "you_quote": {
+                  "sentence_id": "s16",
+                  "text": "So, based on the fact that it will be fully explained, at the end, I'm going to make a short tutorial on how to make it short, and what kind of workflow it is."
+                },
+                "creator_descriptor": "pattern-first explanation",
+                "match_reason": "You frame the workflow first, then plan a concise demonstration."
+              }
+            ],
+            "why": "You announce the key idea and give its practical result."
+          }
+        ],
+        "step_trace": [
+          {
+            "step": "transcript",
+            "status": "started",
+            "elapsed_ms": 0
+          },
+          {
+            "step": "transcript",
+            "status": "completed",
+            "elapsed_ms": 4363
+          },
+          {
+            "step": "input_gate",
+            "status": "completed",
+            "elapsed_ms": 4363
+          },
+          {
+            "step": "style_reader",
+            "status": "started",
+            "elapsed_ms": 4363
+          },
+          {
+            "step": "matcher",
+            "status": "started",
+            "elapsed_ms": 4363
+          },
+          {
+            "step": "memory",
+            "status": "started",
+            "elapsed_ms": 4363
+          },
+          {
+            "step": "style_reader",
+            "status": "completed",
+            "elapsed_ms": 22731
+          },
+          {
+            "step": "matcher",
+            "status": "completed",
+            "elapsed_ms": 22731
+          },
+          {
+            "step": "memory",
+            "status": "completed",
+            "elapsed_ms": 22731
+          },
+          {
+            "step": "tiebreaker",
+            "status": "started",
+            "elapsed_ms": 22731
+          },
+          {
+            "step": "tiebreaker",
+            "status": "completed",
+            "elapsed_ms": 25557
+          },
+          {
+            "step": "evidence_writer",
+            "status": "started",
+            "elapsed_ms": 25557
+          },
+          {
+            "step": "evidence_writer",
+            "status": "completed",
+            "elapsed_ms": 42702
+          },
+          {
+            "step": "confidence_judge",
+            "status": "started",
+            "elapsed_ms": 42702
+          },
+          {
+            "step": "confidence_judge",
+            "status": "completed",
+            "elapsed_ms": 57479
+          }
+        ],
+        "audio_deleted": true,
+        "judge_skipped": false,
+        "match_confidence_capped": false,
+        "memory_available": true,
+        "tiebreak_used": true,
+        "tiebreak_skipped": false,
+        "analysis_complete": true,
+        "degraded_reason": null,
+        "message": null
+      }
+    }
+  ]
+}

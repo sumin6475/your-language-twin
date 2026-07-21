@@ -35,6 +35,9 @@ export function Header({
 /* Badge (Claude Design DS) ------------------------------------------------ */
 const badgeVariants: Record<string, CSSProperties> = {
   match: { background: "var(--blue-tint)", color: "var(--blue-deep)" },
+  matchStrong: { background: "var(--blue-deep)", color: "var(--text-on-blue)" },
+  matchClear: { background: "var(--blue-tint)", color: "var(--blue-deep)", border: "1px solid #BFDBFE" },
+  matchPartial: { background: "var(--bg-subtle)", color: "var(--ink-secondary)", border: "1px dashed var(--border)" },
   neutral: { background: "var(--bg-subtle)", color: "var(--ink-secondary)", border: "1px solid var(--border)" },
   solid: { background: "var(--blue-deep)", color: "var(--text-on-blue)" },
 };
@@ -45,7 +48,7 @@ export function Badge({
   style,
 }: {
   children: ReactNode;
-  variant?: "match" | "neutral" | "solid";
+  variant?: "match" | "matchStrong" | "matchClear" | "matchPartial" | "neutral" | "solid";
   style?: CSSProperties;
 }) {
   return (

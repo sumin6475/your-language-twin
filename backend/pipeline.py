@@ -10,7 +10,7 @@ import re
 import time
 import uuid
 from collections.abc import Callable
-from typing import Any, TypeVar
+from typing import Any, TypeVar, cast
 
 import numpy as np
 
@@ -24,6 +24,13 @@ T = TypeVar("T")
 EXPOSED_BANNED = re.compile(r"\b(embedding|style vector|descriptor|shadow)\b|—", re.I)
 logger = logging.getLogger(__name__)
 
+PIPELINE_TIMEOUT_SECONDS = 105
+STYLE_TIMEOUT_SECONDS = 30
+EVIDENCE_TIMEOUT_SECONDS = 30
+JUDGE_TIMEOUT_SECONDS = 25
+TIEBREAK_TIMEOUT_SECONDS = 10
+OPENAI_TIMEOUT_SECONDS = 28
+
 
 class MatchPipeline:
     """Dependencies are injectable to make all routing and fallback paths testable."""
@@ -34,6 +41,7 @@ class MatchPipeline:
                  tiebreak_llm: Callable[[str, str, int], str] | None = None) -> None:
         self.translate = translate or self._groq_translate
         self.llm = llm or self._gpt56
+        self._uses_structured_output = llm is None
         self.tiebreak_llm = tiebreak_llm or self._gpt_mini
         self._embedding_model: Any | None = None
         if embed:
@@ -54,8 +62,9 @@ class MatchPipeline:
             trace.append(StepTrace(step=step, status=status, elapsed_ms=int((time.monotonic() - started) * 1000)))
 
         try:
-            return await asyncio.wait_for(self._run(audio, filename, content_type, opt_in, memory_token, request_id, mark, trace), 45)
+            return await asyncio.wait_for(self._run(audio, filename, content_type, opt_in, memory_token, request_id, mark, trace), PIPELINE_TIMEOUT_SECONDS)
         except asyncio.TimeoutError:
+            logger.exception("Pipeline timed out for request %s", request_id)
             mark("pipeline", "failed")
             return self._fallback_cards(trace, "We are showing the clearest overlap we found.")
 
@@ -67,7 +76,7 @@ class MatchPipeline:
         except Exception:
             logger.exception("Transcript Agent failed for request %s", request_id)
             mark("transcript", "failed")
-            return PipelineResponse(matches=[], step_trace=trace, audio_deleted=True, message="The match could not be completed. Please try again.")
+            return PipelineResponse(matches=[], step_trace=trace, audio_deleted=True, degraded_reason="transcript", message="The match could not be completed. Please try again.")
         finally:
             # The endpoint passes a bytearray, so clearing here also releases its only request copy.
             if isinstance(audio, bytearray):
@@ -76,12 +85,12 @@ class MatchPipeline:
         mark("transcript", "completed")
         if transcript.word_count < 120 or (transcript.duration_ms is not None and transcript.duration_ms < 45_000):
             mark("input_gate", "failed")
-            return PipelineResponse(matches=[], step_trace=trace, audio_deleted=True, message="Please talk a little longer, about a minute or two.")
+            return PipelineResponse(matches=[], step_trace=trace, audio_deleted=True, degraded_reason="input", message="Please talk a little longer, about a minute or two.")
         short_sample = (transcript.duration_ms is not None and transcript.duration_ms < 60_000) or transcript.word_count < 180
         mark("input_gate", "completed")
 
         mark("style_reader", "started"); mark("matcher", "started"); mark("memory", "started")
-        style_task = asyncio.wait_for(self._style_reader(transcript, request_id), 20)
+        style_task = asyncio.wait_for(self._style_reader(transcript, request_id), STYLE_TIMEOUT_SECONDS)
         matcher_task = asyncio.to_thread(self._matcher, transcript.transcript_en)
         memory_task = self._memory_read(opt_in, memory_token)
         style, candidate_matches, memory = await asyncio.gather(style_task, matcher_task, memory_task, return_exceptions=True)
@@ -90,14 +99,14 @@ class MatchPipeline:
         mark("memory", "completed" if not isinstance(memory, Exception) else "failed")
         if isinstance(candidate_matches, Exception):
             logger.error("Creator Matcher failed for request %s: %s", request_id, candidate_matches)
-            return PipelineResponse(matches=[], step_trace=trace, audio_deleted=True, message="The match could not be completed. Please try again.")
+            return PipelineResponse(matches=[], step_trace=trace, audio_deleted=True, degraded_reason="matcher", message="The match could not be completed. Please try again.")
         matches = candidate_matches[:3]
         tiebreak_used = False
         tiebreak_skipped = False
         if needs_tiebreak([(self._creators_by_id[match.creator_id], match.cosine_score) for match in candidate_matches]):
             mark("tiebreaker", "started")
             try:
-                matches = await asyncio.wait_for(self._tiebreak(transcript, candidate_matches), 5)
+                matches = await asyncio.wait_for(self._tiebreak(transcript, candidate_matches), TIEBREAK_TIMEOUT_SECONDS)
                 tiebreak_used = True
                 mark("tiebreaker", "completed")
             except Exception:
@@ -108,25 +117,28 @@ class MatchPipeline:
             tiebreak_skipped = True
             mark("tiebreaker", "skipped")
         if isinstance(style, Exception):
-            return self._generic_response(matches, trace, short_sample).model_copy(update={"tiebreak_used": tiebreak_used, "tiebreak_skipped": tiebreak_skipped})
+            logger.error("Thinking Style Agent failed for request %s", request_id, exc_info=(type(style), style, style.__traceback__))
+            return self._generic_response(matches, trace, short_sample, degraded_reason="style").model_copy(update={"tiebreak_used": tiebreak_used, "tiebreak_skipped": tiebreak_skipped})
 
         mark("evidence_writer", "started")
         try:
-            evidence = await asyncio.wait_for(self._evidence_writer(style, matches, request_id), 20)
+            evidence = await asyncio.wait_for(self._evidence_writer(style, matches, request_id), EVIDENCE_TIMEOUT_SECONDS)
             self._validate_evidence(evidence, style, matches)
             mark("evidence_writer", "completed")
         except Exception:
+            logger.exception("Evidence Agent failed for request %s", request_id)
             mark("evidence_writer", "failed")
-            return self._generic_response(matches, trace, short_sample).model_copy(update={"tiebreak_used": tiebreak_used, "tiebreak_skipped": tiebreak_skipped})
+            return self._generic_response(matches, trace, short_sample, degraded_reason="evidence").model_copy(update={"tiebreak_used": tiebreak_used, "tiebreak_skipped": tiebreak_skipped})
 
         mark("confidence_judge", "started")
         try:
-            judgment = await asyncio.wait_for(self._judge(evidence, transcript, request_id), 18)
+            judgment = await asyncio.wait_for(self._judge(evidence, transcript, request_id), JUDGE_TIMEOUT_SECONDS)
             mark("confidence_judge", "completed")
         except Exception:
+            logger.exception("Confidence Judge failed for request %s", request_id)
             mark("confidence_judge", "failed")
             judgment = ConfidenceJudgment(verified_panels=[VerifiedPanel(creator_id=m.creator_id, resemblance="partial", evidence=[]) for m in matches], overall_confidence=0, judge_skipped=True)
-        return self._assemble(matches, style, evidence, judgment, trace, short_sample, isinstance(memory, Exception), tiebreak_used, tiebreak_skipped)
+        return self._assemble(matches, style, evidence, judgment, trace, short_sample, isinstance(memory, Exception), tiebreak_used, tiebreak_skipped, analysis_complete=not judgment.judge_skipped)
 
     async def _transcript(self, audio: bytes | bytearray, filename: str, content_type: str | None) -> TranscriptResult:
         text = await asyncio.to_thread(self.translate, bytes(audio), filename, content_type)
@@ -134,7 +146,7 @@ class MatchPipeline:
         return TranscriptResult(transcript_en=text.strip(), sentences=sentences, word_count=len(text.split()), audio_deleted=True)
 
     async def _style_reader(self, transcript: TranscriptResult, request_id: str) -> StyleReading:
-        result = await self._ask(StyleReading, STYLE_SYSTEM, json_input(request_id=request_id, transcript_en=transcript.transcript_en, sentences=[s.model_dump() for s in transcript.sentences], creator_trait_vocabulary=["question-led", "step-by-step", "reflective", "direct", "careful", "story-led"]), 500)
+        result = await self._ask(StyleReading, STYLE_SYSTEM, json_input(request_id=request_id, transcript_en=transcript.transcript_en, sentences=[s.model_dump() for s in transcript.sentences], creator_trait_vocabulary=["question-led", "step-by-step", "reflective", "direct", "careful", "story-led"]), 2500, request_id=request_id, stage="style_reader")
         valid = {s.id for s in transcript.sentences}
         if len(result.thinking_traits) < 3 or any(t.evidence_sentence_id not in valid for t in result.thinking_traits + result.learning_traits): raise ValueError("invalid style evidence")
         return result
@@ -155,7 +167,7 @@ class MatchPipeline:
                     for match in candidates
                 ],
             ),
-            300,
+            800,
         )
         ranked_ids = json.loads(raw).get("ranked_ids")
         valid_ids = {match.creator_id for match in candidates}
@@ -165,23 +177,26 @@ class MatchPipeline:
         return [by_id[creator_id].model_copy(update={"rank": index + 1}) for index, creator_id in enumerate(ranked_ids)]
 
     async def _evidence_writer(self, style: StyleReading, matches: list[CreatorMatch], request_id: str) -> EvidenceWriting:
-        return await self._ask(EvidenceWriting, EVIDENCE_SYSTEM, json_input(request_id=request_id, learner_quotes=[q.model_dump() for q in style.learner_quotes], thinking_traits=[t.model_dump() for t in style.thinking_traits], learning_traits=[t.model_dump() for t in style.learning_traits], matches=[m.model_dump() for m in matches]), 700)
+        return await self._ask(EvidenceWriting, EVIDENCE_SYSTEM, json_input(request_id=request_id, learner_quotes=[q.model_dump() for q in style.learner_quotes], thinking_traits=[t.model_dump() for t in style.thinking_traits], learning_traits=[t.model_dump() for t in style.learning_traits], matches=[m.model_dump() for m in matches]), 3000, request_id=request_id, stage="evidence_writer")
 
     async def _judge(self, evidence: EvidenceWriting, transcript: TranscriptResult, request_id: str) -> ConfidenceJudgment:
         cited = {item.you_quote.sentence_id for panel in evidence.why_panels for item in panel.evidence}
         sentence_by_id = {s.id: s for s in transcript.sentences}
-        return await self._ask(ConfidenceJudgment, JUDGE_SYSTEM, json_input(request_id=request_id, why_panels=[p.model_dump() for p in evidence.why_panels], cited_sentences=[sentence_by_id[i].model_dump() for i in cited if i in sentence_by_id]), 500)
+        return await self._ask(ConfidenceJudgment, JUDGE_SYSTEM, json_input(request_id=request_id, why_panels=[p.model_dump() for p in evidence.why_panels], cited_sentences=[sentence_by_id[i].model_dump() for i in cited if i in sentence_by_id]), 2000, request_id=request_id, stage="confidence_judge")
 
-    async def _ask(self, schema: type[T], system: str, user: str, max_tokens: int) -> T:
+    async def _ask(self, schema: type[T], system: str, user: str, max_tokens: int, *, request_id: str, stage: str) -> T:
         """One retry with a stricter instruction; no agent can create an unbounded loop."""
         last_error: Exception | None = None
         for attempt in range(2):
             try:
+                if self._uses_structured_output:
+                    return cast(T, await asyncio.to_thread(self._gpt56_parsed, schema, system, user, max_tokens))
                 suffix = " Return valid JSON only and satisfy every required field." if attempt else ""
                 raw = await asyncio.to_thread(self.llm, system + suffix, user, max_tokens)
                 return schema.model_validate(json.loads(raw))  # type: ignore[attr-defined, no-any-return]
             except Exception as error:
                 last_error = error
+                logger.warning("LLM schema attempt %s failed for request %s at %s: %s", attempt + 1, request_id, stage, error)
         raise RuntimeError("LLM schema validation failed") from last_error
 
     async def _memory_read(self, opt_in: bool, token: str | None) -> dict[str, Any]:
@@ -193,7 +208,7 @@ class MatchPipeline:
         for panel in evidence.why_panels:
             if len(panel.evidence) < 2 or any(e.you_quote.sentence_id not in quotes or e.creator_descriptor not in allowed[panel.creator_id] for e in panel.evidence): raise ValueError("ungrounded evidence")
 
-    def _assemble(self, matches: list[CreatorMatch], style: StyleReading, evidence: EvidenceWriting, judgment: ConfidenceJudgment, trace: list[StepTrace], short: bool, memory_unavailable: bool, tiebreak_used: bool, tiebreak_skipped: bool) -> PipelineResponse:
+    def _assemble(self, matches: list[CreatorMatch], style: StyleReading, evidence: EvidenceWriting, judgment: ConfidenceJudgment, trace: list[StepTrace], short: bool, memory_unavailable: bool, tiebreak_used: bool, tiebreak_skipped: bool, *, analysis_complete: bool) -> PipelineResponse:
         panels = {p.creator_id: p for p in evidence.why_panels}; verdicts = {p.creator_id: p for p in judgment.verified_panels}; cards = []
         for match in matches:
             panel = panels.get(match.creator_id, WhyPanel(creator_id=match.creator_id)); verdict = verdicts.get(match.creator_id)
@@ -212,13 +227,13 @@ class MatchPipeline:
             if short and resemblance == "strong": resemblance = "clear"
             why = items[0].match_reason if items else "These two build sentences in a similar way."
             cards.append(MatchCard(creator_id=match.creator_id, name=match.creator_name, role=match.role, video_url=match.channel_url, similarity=match.cosine_score, resemblance=resemblance, trait_chips=[self._clean(chip) for chip in panel.learner_trait_chips], evidence=items, why=self._clean(why)))
-        return PipelineResponse(matches=cards, step_trace=trace, audio_deleted=True, judge_skipped=judgment.judge_skipped, match_confidence_capped=short, memory_available=not memory_unavailable, tiebreak_used=tiebreak_used, tiebreak_skipped=tiebreak_skipped)
+        return PipelineResponse(matches=cards, step_trace=trace, audio_deleted=True, judge_skipped=judgment.judge_skipped, match_confidence_capped=short, memory_available=not memory_unavailable, tiebreak_used=tiebreak_used, tiebreak_skipped=tiebreak_skipped, analysis_complete=analysis_complete, degraded_reason=None if analysis_complete else "judge")
 
-    def _generic_response(self, matches: list[CreatorMatch], trace: list[StepTrace], short: bool) -> PipelineResponse:
-        return PipelineResponse(matches=[MatchCard(creator_id=m.creator_id, name=m.creator_name, role=m.role, video_url=m.channel_url, similarity=m.cosine_score, resemblance="partial", why="These two build sentences in a similar way.") for m in matches[:3]], step_trace=trace, audio_deleted=True, match_confidence_capped=short)
+    def _generic_response(self, matches: list[CreatorMatch], trace: list[StepTrace], short: bool, *, degraded_reason: str) -> PipelineResponse:
+        return PipelineResponse(matches=[MatchCard(creator_id=m.creator_id, name=m.creator_name, role=m.role, video_url=m.channel_url, similarity=m.cosine_score, resemblance="partial", why="These two build sentences in a similar way.") for m in matches[:3]], step_trace=trace, audio_deleted=True, match_confidence_capped=short, analysis_complete=False, degraded_reason=degraded_reason)
 
     def _fallback_cards(self, trace: list[StepTrace], message: str) -> PipelineResponse:
-        return self._generic_response(self._matcher("A careful, reflective explanation."), trace, False).model_copy(update={"message": message})
+        return self._generic_response(self._matcher("A careful, reflective explanation."), trace, False, degraded_reason="timeout").model_copy(update={"message": message})
 
     @staticmethod
     def _clean(value: str) -> str:
@@ -235,14 +250,30 @@ class MatchPipeline:
     def _gpt56(system: str, user: str, max_tokens: int) -> str:
         from openai import OpenAI
         if not os.environ.get("OPENAI_API_KEY"): raise RuntimeError("OPENAI_API_KEY is required for GPT-5.6.")
-        return OpenAI().responses.create(model="gpt-5.6", instructions=system, input=user, max_output_tokens=max_tokens).output_text
+        return OpenAI(timeout=OPENAI_TIMEOUT_SECONDS, max_retries=0).responses.create(model="gpt-5.6", instructions=system, input=user, max_output_tokens=max_tokens, reasoning={"effort": "low"}).output_text
+
+    @staticmethod
+    def _gpt56_parsed(schema: type[T], system: str, user: str, max_tokens: int) -> T:
+        from openai import OpenAI
+        if not os.environ.get("OPENAI_API_KEY"): raise RuntimeError("OPENAI_API_KEY is required for GPT-5.6.")
+        response = OpenAI(timeout=OPENAI_TIMEOUT_SECONDS, max_retries=0).responses.parse(
+            model="gpt-5.6",
+            instructions=system,
+            input=user,
+            text_format=schema,
+            max_output_tokens=max_tokens,
+            reasoning={"effort": "low"},
+        )
+        if response.output_parsed is None:
+            raise RuntimeError("GPT-5.6 returned no structured output.")
+        return response.output_parsed
 
     @staticmethod
     def _gpt_mini(system: str, user: str, max_tokens: int) -> str:
         from openai import OpenAI
         if not os.environ.get("OPENAI_API_KEY"): raise RuntimeError("OPENAI_API_KEY is required for the tiebreaker.")
         model = os.environ.get("TIEBREAK_MODEL", "gpt-4.1-mini")
-        return OpenAI().responses.create(model=model, instructions=system, input=user, max_output_tokens=max_tokens).output_text
+        return OpenAI(timeout=OPENAI_TIMEOUT_SECONDS, max_retries=0).responses.create(model=model, instructions=system, input=user, max_output_tokens=max_tokens).output_text
 
     @staticmethod
     def _load_embedding_model() -> Any:

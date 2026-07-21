@@ -5,3 +5,4 @@ groq>=0.30
 openai>=1.109
 sentence-transformers>=5.0
 numpy>=2.1
+python-dotenv>=1.0

@@ -28,6 +28,10 @@ export type MatchResponse = {
   judge_skipped?: boolean;
   match_confidence_capped?: boolean;
   memory_available?: boolean;
+  tiebreak_used?: boolean;
+  tiebreak_skipped?: boolean;
+  analysis_complete?: boolean;
+  degraded_reason?: string | null;
   message?: string | null;
 };
 
@@ -36,7 +40,9 @@ export const labelForStep = (step: string) => ({
   input_gate: "Input check",
   style_reader: "Thinking Style Agent",
   matcher: "Role Model Matching Agent",
+  tiebreaker: "Tiebreaker",
   memory: "Memory",
   evidence_writer: "Evidence Agent",
   confidence_judge: "Confidence Judge",
+  pipeline: "Pipeline",
 }[step] ?? step.replaceAll("_", " "));

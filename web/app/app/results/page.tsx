@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import { ComingSoonVision } from "@/components/ComingSoonVision";
 import { MatchCard } from "@/components/MatchCard";
 import { Check, Header, LivePill, ShieldCheck } from "@/components/ui";
-import { CONTACT_EMAIL, labelForStep, RESULT_STORAGE_KEY, type MatchResponse } from "@/lib/matches";
+import { CONTACT_EMAIL, labelForStep, RESULT_STORAGE_KEY, type MatchResponse, type StepTrace } from "@/lib/matches";
 
 export default function ResultsPage() {
   const [result, setResult] = useState<MatchResponse | null>(null);
@@ -50,7 +50,15 @@ export default function ResultsPage() {
     );
   }
 
-  const completed = result.step_trace.filter((item) => item.status === "completed");
+  const stageTrace = result.step_trace.reduce<StepTrace[]>((stages, item) => {
+    const index = stages.findIndex((stage) => stage.step === item.step);
+    if (index === -1) stages.push(item);
+    else stages[index] = item;
+    return stages;
+  }, []);
+  const hasEvidence = result.matches.some((match) => match.evidence.length > 0);
+  const isDegraded = result.analysis_complete === false || Boolean(result.degraded_reason) || !hasEvidence;
+  const partialResultMessage = result.message ?? "We found possible creator matches, but the detailed evidence breakdown did not complete. Try another clip for a full explanation.";
 
   return (
     <main className="lrm-page">
@@ -64,16 +72,25 @@ export default function ResultsPage() {
             These three English speakers talk the way you do.
           </h1>
           <p style={{ fontSize: 14, lineHeight: 1.6, color: "var(--ink-tertiary)", margin: "14px auto 0", maxWidth: "48ch", textWrap: "pretty" }}>
-            Each match comes with the exact things you both do the same way, checked against your own words. These are learning-fit picks, not a verdict on your voice.
+            {isDegraded
+              ? "These are provisional learning-fit picks. The detailed comparison below shows which analysis steps completed."
+              : "Each match comes with the exact things you both do the same way, checked against your own words. These are learning-fit picks, not a verdict on your voice."}
           </p>
           {result.match_confidence_capped ? (
             <p style={{ fontSize: 13, color: "var(--ink-tertiary)", margin: "10px auto 0", maxWidth: "48ch" }}>Based on a short sample, we are showing a careful first match.</p>
           ) : null}
         </div>
 
+        {isDegraded ? (
+          <div role="status" style={{ background: "var(--bg-subtle)", border: "1px dashed var(--border)", borderRadius: "var(--radius-md)", padding: "14px 16px", color: "var(--ink-secondary)", fontSize: 14, lineHeight: 1.55, marginTop: 24 }}>
+            <span style={{ fontFamily: "var(--font-display)", fontWeight: 600, color: "var(--ink)", marginRight: 6 }}>Partial result.</span>
+            {partialResultMessage}
+          </div>
+        ) : null}
+
         <section aria-label="Your creator matches" style={{ display: "flex", flexDirection: "column", gap: 24, marginTop: 36 }}>
           {result.matches.map((match, index) => (
-            <MatchCard key={match.creator_id} match={match} judgeSkipped={result.judge_skipped} raised={index === 0} />
+            <MatchCard key={match.creator_id} match={match} judgeSkipped={result.judge_skipped} analysisComplete={result.analysis_complete} raised={index === 0} />
           ))}
         </section>
 
@@ -94,8 +111,15 @@ export default function ResultsPage() {
             <LivePill />
           </div>
           <div style={{ display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap" }}>
-            {completed.map((item, index) => {
-              const isJudgePassed = item.step === "confidence_judge" && !result.judge_skipped;
+            {stageTrace.map((item, index) => {
+              const isJudgePassed = item.step === "confidence_judge" && item.status === "completed" && !result.judge_skipped && result.analysis_complete !== false;
+              const state = item.status === "completed"
+                ? { mark: "✓", copy: "completed", color: "var(--blue-deep)", background: "var(--blue-tint)", border: "1px solid #BFDBFE" }
+                : item.status === "failed"
+                  ? { mark: "×", copy: "failed", color: "#B91C1C", background: "#FEF2F2", border: "1px solid #FECACA" }
+                  : item.status === "skipped"
+                    ? { mark: "⊘", copy: "skipped", color: "var(--ink-tertiary)", background: "var(--bg-subtle)", border: "1px dashed var(--border)" }
+                    : { mark: "…", copy: "not finished", color: "var(--ink-secondary)", background: "var(--bg-subtle)", border: "1px solid var(--border)" };
               return (
                 <span key={`${item.step}-${item.elapsed_ms}-${index}`} style={{ display: "contents" }}>
                   {isJudgePassed ? (
@@ -104,15 +128,22 @@ export default function ResultsPage() {
                       Confidence Judge passed
                     </span>
                   ) : (
-                    <span style={{ fontFamily: "var(--font-display)", fontSize: 13, fontWeight: 500, color: "var(--ink-secondary)", background: "var(--bg-subtle)", border: "1px solid var(--border)", borderRadius: 999, padding: "6px 12px" }}>
-                      {labelForStep(item.step)}
+                    <span style={{ display: "inline-flex", alignItems: "center", gap: 6, fontFamily: "var(--font-display)", fontSize: 13, fontWeight: 500, color: state.color, background: state.background, border: state.border, borderRadius: 999, padding: "6px 12px" }}>
+                      <span aria-hidden="true">{state.mark}</span>
+                      {labelForStep(item.step)}: {state.copy}
                     </span>
                   )}
-                  {index < completed.length - 1 ? <span style={{ color: "var(--ink-tertiary)" }}>&rarr;</span> : null}
+                  {index < stageTrace.length - 1 ? <span style={{ color: "var(--ink-tertiary)" }}>&rarr;</span> : null}
                 </span>
               );
             })}
           </div>
+        </div>
+
+        <div style={{ marginTop: 36 }}>
+          <Link className="dc-btn dc-btn-primary" href="/app" style={{ width: "100%", padding: "16px 26px", fontSize: 16 }}>
+            Try another clip
+          </Link>
         </div>
 
         <ComingSoonVision />

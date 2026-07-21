@@ -1,0 +1,57 @@
+<template id="b9-template">
+  <div id="b9-root" data-composition-id="b9" data-width="1920" data-height="1080">
+    <div class="b9-stage" id="b9-stage">
+      <div class="b9-glow" id="b9-glow"></div>
+      <div class="b9-stack">
+        <div class="b9-line" id="b9-l1">Today, we help you find someone who already thinks like you.</div>
+        <div class="b9-line" id="b9-l2">Tomorrow, we might understand how you learn well enough<br/>to help you become <span class="b9-key">someone else's role model</span>.</div>
+      </div>
+      <div class="b9-endcard" id="b9-endcard">
+        <span class="b9-mark"></span>
+        <span class="b9-wordmark">Language Role Model</span>
+      </div>
+      <div class="b9-fade" id="b9-fade"></div>
+    </div>
+
+    <style>
+      @font-face { font-family: "Clash Display"; src: url("fonts/ClashDisplay-500.woff2") format("woff2"); font-weight: 500; font-style: normal; }
+      @font-face { font-family: "Clash Display"; src: url("fonts/ClashDisplay-600.woff2") format("woff2"); font-weight: 600; font-style: normal; }
+      @font-face { font-family: "Inter"; src: url("fonts/InterVariable.woff2") format("woff2-variations"); font-weight: 100 900; font-style: normal; }
+      #b9-root { position: absolute; inset: 0; background: #0A0A0B; overflow: hidden; }
+      #b9-root .b9-stage { position: absolute; inset: 0; }
+      #b9-root .b9-glow { position: absolute; left: 50%; top: 50%; width: 1200px; height: 760px; transform: translate(-50%, -50%); background: radial-gradient(closest-side, rgba(30,64,175,0.2), rgba(10,10,11,0)); }
+      #b9-root .b9-stack { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 46px; padding: 0 170px; }
+      #b9-root .b9-line { font-family: "Clash Display", sans-serif; font-weight: 600; font-size: 50px; letter-spacing: -0.02em; color: #FFFFFF; text-align: center; line-height: 1.28; }
+      #b9-root .b9-key { color: #3B82F6; }
+      #b9-root .b9-endcard { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; gap: 26px; opacity: 0; }
+      #b9-root .b9-mark { width: 74px; height: 74px; border-radius: 20px; background: linear-gradient(135deg, #1E40AF 0%, #3B82F6 100%); box-shadow: 0 0 60px rgba(59,130,246,0.4); }
+      #b9-root .b9-wordmark { font-family: "Clash Display", sans-serif; font-weight: 600; font-size: 58px; letter-spacing: -0.02em; color: #FFFFFF; }
+      #b9-root .b9-fade { position: absolute; inset: 0; background: #000000; opacity: 0; }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <script>
+      window.__timelines = window.__timelines || {};
+      (function () {
+        const tl = gsap.timeline({ paused: true });
+        const DIM = "#6e6e78";
+
+        tl.fromTo("#b9-stage", { opacity: 0 }, { opacity: 1, duration: 0.9, ease: "sine.inOut" }, 0);
+
+        /* Today / Tomorrow — mirrors the opening, settled, no spring */
+        tl.fromTo("#b9-l1", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.55, ease: "power2.out" }, 1.7);
+        tl.fromTo("#b9-l2", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }, 5.9);
+        tl.to("#b9-l1", { color: DIM, duration: 0.55, ease: "sine.inOut" }, 5.95);
+
+        /* final scene — exits allowed: everything fades but the blue persists */
+        tl.to(["#b9-l1", "#b9-l2"], { opacity: 0, duration: 0.8, ease: "sine.inOut" }, 12.0);
+        tl.fromTo("#b9-endcard", { opacity: 0, scale: 0.94 }, { opacity: 1, scale: 1, duration: 0.8, ease: "power2.out", transformOrigin: "50% 50%" }, 12.6);
+        tl.fromTo("#b9-glow", { opacity: 1 }, { opacity: 0.65, duration: 6, ease: "sine.inOut" }, 8);
+
+        /* fade to black at the very end */
+        tl.to("#b9-fade", { opacity: 1, duration: 0.85, ease: "power1.in" }, 13.9);
+
+        window.__timelines["b9"] = tl;
+      })();
+    </script>
+  </div>
+</template>

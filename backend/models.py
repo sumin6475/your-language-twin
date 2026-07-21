@@ -134,4 +134,6 @@ class PipelineResponse(BaseModel):
     memory_available: bool = True
     tiebreak_used: bool = False
     tiebreak_skipped: bool = False
+    analysis_complete: bool = False
+    degraded_reason: str | None = None
     message: str | None = None

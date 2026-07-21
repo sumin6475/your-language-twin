@@ -1,61 +1,40 @@
-"""Local synchronous HTTP API. It never writes user audio to disk."""
-
+"""Local HTTP API. Audio is held only in request memory and dropped after ASR."""
 from __future__ import annotations
 
-from fastapi import FastAPI, File, HTTPException, UploadFile
-from pydantic import BaseModel
+from pathlib import Path
 
+from fastapi import FastAPI, File, HTTPException, UploadFile
+from fastapi.middleware.cors import CORSMiddleware
+from dotenv import load_dotenv
+
+from backend.demo_cache import DemoResultCache
+from backend.models import PipelineResponse
 from backend.pipeline import MatchPipeline
 
 
+# Local convenience only. Deployment-provided variables (including Vercel's) win.
+load_dotenv(Path(__file__).resolve().parent.parent / ".env", override=False)
+
 MAX_AUDIO_BYTES = 40 * 1024 * 1024
-app = FastAPI(title="Your Ideal Role Model — local demo")
+app = FastAPI(title="Your Ideal Role Model - local demo")
+app.add_middleware(CORSMiddleware, allow_origin_regex=r"http://(localhost|127\.0\.0\.1):\d+", allow_methods=["*"], allow_headers=["*"])
 pipeline = MatchPipeline()
-
-
-class CreatorResult(BaseModel):
-    name: str
-    role: str
-    video_url: str
-    similarity: float
-    why: str
-
-
-class MatchResponse(BaseModel):
-    matches: list[CreatorResult]
-
+demo_cache = DemoResultCache.from_file()
 
 @app.get("/health")
-def health() -> dict[str, str]:
-    return {"status": "ok"}
+def health() -> dict[str, str]: return {"status": "ok"}
 
-
-@app.post("/match", response_model=MatchResponse)
-async def match(audio: UploadFile = File(...)) -> MatchResponse:
-    raw_audio = await audio.read(MAX_AUDIO_BYTES + 1)
+@app.post("/match", response_model=PipelineResponse)
+async def match(audio: UploadFile = File(...), opt_in: bool = False, memory_token: str | None = None) -> PipelineResponse:
+    raw_audio = bytearray(await audio.read(MAX_AUDIO_BYTES + 1))
     try:
-        if not raw_audio:
-            raise HTTPException(status_code=400, detail="Upload a non-empty audio file.")
-        if len(raw_audio) > MAX_AUDIO_BYTES:
-            raise HTTPException(
-                status_code=413, detail="Audio must be 40 MB or smaller for this demo."
-            )
-        found = pipeline.match(raw_audio, audio.filename or "recording", audio.content_type)
-    except RuntimeError as error:
-        raise HTTPException(status_code=503, detail=str(error)) from error
+        if not raw_audio: raise HTTPException(400, "Upload a non-empty audio file.")
+        if len(raw_audio) > MAX_AUDIO_BYTES: raise HTTPException(413, "Audio must be 40 MB or smaller for this demo.")
+        cached = demo_cache.get(raw_audio)
+        if cached:
+            return cached
+        return await pipeline.run_pipeline(raw_audio, audio.filename or "recording", audio.content_type, opt_in=opt_in, memory_token=memory_token)
     finally:
-        # The endpoint holds the upload in memory only and drops it immediately after ASR.
+        raw_audio.clear()
         del raw_audio
         await audio.close()
-    return MatchResponse(
-        matches=[
-            CreatorResult(
-                name=item.creator.name,
-                role=item.creator.role,
-                video_url=item.creator.video_url,
-                similarity=item.similarity,
-                why=item.why,
-            )
-            for item in found
-        ]
-    )
